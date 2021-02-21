@@ -1,13 +1,13 @@
 @charset "utf-8";
 
 /**
- * #ACSS(font-size; fs; 12, 16; 1px);
+ * #SACSS(font-size; fs; 12, 16; 1px);
  * @prop: 属性名
  * @name: 缩写名
  * @list: 值列表
  * @unit: 单位换算表达式, 默认为1px, 想要 rem 填写 1/16*1rem
  */
-#ACSS(@prop; @name; @list; @unit) when not(@list = false) {
+#SACSS(@prop; @name; @list; @unit) when not(@list = false) {
   .loop(@i) when (@i < length(@list) + 1) {
     @item: extract(@list, @i);
     .@{name}@{item} {
@@ -20,12 +20,12 @@
 }
 
 /**
- * #ACSS(font-weight; fw; 400, 700);
+ * #SACSS(font-weight; fw; 400, 700);
  * @prop: 属性名
  * @name: 缩写名
  * @list: 值列表
  */
-#ACSS(@prop; @name; @list;) when not(@list =false) {
+#SACSS(@prop; @name; @list;) when not(@list =false) {
   .loop(@i) when (@i < length(@list) + 1) {
     @item: extract(@list, @i);
     .@{name}@{item} {
@@ -43,10 +43,10 @@
  * @unit: 单位换算表达式, 默认为1px, 想要 rem 填写 1/16*1rem
  */
 #Margins(@list:false; @unit) {
-  #ACSS(@prop: margin-top; @name: mt; @list; @unit);
-  #ACSS(@prop: margin-right; @name: mr; @list; @unit);
-  #ACSS(@prop: margin-bottom; @name: mb; @list; @unit);
-  #ACSS(@prop: margin-left; @name: ml; @list; @unit);
+  #SACSS(@prop: margin-top; @name: mt; @list; @unit);
+  #SACSS(@prop: margin-right; @name: mr; @list; @unit);
+  #SACSS(@prop: margin-bottom; @name: mb; @list; @unit);
+  #SACSS(@prop: margin-left; @name: ml; @list; @unit);
 }
 
 /**
@@ -55,10 +55,10 @@
  * @unit: 单位换算表达式, 默认为1px, 想要 rem 填写 1/16*1rem
  */
 #Paddings(@list:false; @unit) {
-  #ACSS(@prop: padding-top; @name: pt; @list; @unit);
-  #ACSS(@prop: padding-right; @name: pr; @list; @unit);
-  #ACSS(@prop: padding-bottom; @name: pb; @list; @unit);
-  #ACSS(@prop: padding-left; @name: pl; @list; @unit);
+  #SACSS(@prop: padding-top; @name: pt; @list; @unit);
+  #SACSS(@prop: padding-right; @name: pr; @list; @unit);
+  #SACSS(@prop: padding-bottom; @name: pb; @list; @unit);
+  #SACSS(@prop: padding-left; @name: pl; @list; @unit);
 }
 
 /*

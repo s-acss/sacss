@@ -1,8 +1,12 @@
-# sacss
+
 
 Static Atomic CSS.
 
-[ACSS](http://acss.io/) / utility-first CSS / Functional CSS 的轻量级解决方案。
+Rapidly build modern websites without ever leaving your HTML.
+
+A utility-first CSS framework with strict classes name rule that can be composed to build any design, directly in your markup.
+
+It attempts to solve the same problems as [tailwindcss](https://tailwindcss.com/) but in [Atomic css](https://acss.io/) way.
 
 [![npm package][npm-badge]][npm-url] 
 [![github][git-badge]][git-url] 
@@ -15,31 +19,88 @@ Static Atomic CSS.
 [jsdelivr-badge]: https://data.jsdelivr.com/v1/package/npm/ziven27/static-acss/badge
 [jsdelivr-url]: https://www.jsdelivr.com/package/npm/ziven27/static-acss
 
-## 目录结构
 
-```bash
-.
-├── mixin.less   // less Mixin
-├── mixin.scss   // sass Mixin
-└── index.css    // core css file
-```
+静态的 Atomic CSS，是一套具有严格命名规则的 CSS 解决方案，目标是希望让你只需要在 HTML 中就可以快速实现设计原型，而不需要在 HTML 和 CSS 之间来回切换。
 
-## 安装
+这和 [tailwindcss](https://tailwindcss.com/) 要解决的问题是一样的，但不同的是以 [Atomic css](https://acss.io/) 的方式。
+
+## Different
+
+ [tailwindcss](https://tailwindcss.com/) give you a CSS package with classes like `flex`, `pt-4`, `text-center`.
+ 
+ [Atomic css](https://acss.io/) give you a set of naming rules to write class. Base on a builder [Atomizer](https://github.com/acss-io/atomizer), the CSS file is created automatically.
+ 
+ [SACSS](https://ziven27.github.io/sacss) give you a CSS package for quick start. A set of naming rules (easier Atomic CSS ) to extend the package. SASS and LESS mixin provide aliases for most properties that can name in your own way.
+
+ [tailwindcss](https://tailwindcss.com/) 提供了一套有类似 `flex`, `pt-4`, `text-center` 这样命名的 CSS 的类库。
+ 
+ [Atomic css](https://acss.io/) 提供了一套严格 class 的命名规则。基于 [Atomizer](https://github.com/acss-io/atomizer) 这个构建工具，你在 HTML 中每写一个符合这套命名规则的 class，CSS 文件中会自动添加对应的 CSS 样式。
+
+ [SACSS](https://ziven27.github.io/sacss) 提供了一套 class 的命名规则，和一些能覆盖大部分样式的 CSS 类库（同样基于这套命名规则）。同时还提供了一些常用复杂样式的 SASS 和 LESS 的 mixin，你可以使用自己的命名规则去使用这些 mixin。
+
+## install
 
 ```bash
 $ npm i sacss;
 ```
 
+## tree
 
-## CDN
-
-```HTML
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sacss">
+```bash
+.
+├── mixin.less   // less Mixin
+├── mixin.scss   // sass Mixin
+└── index.css    // core css pacakge
 ```
 
-## SACSS 命名规则
+## use
 
-| Declarations         | This     | ACSS.io     | Tailwind CSS      | Blowdrycss           | Basscss          | Tachyons   |
+![img](./img/thumb.png)
+
+```less
+// less
+@import 'sacss';
+@import 'sacss/mixin.less';
+
+#Margins(8, 16; 1px);                // .mt8, .mr8, .mb8, .ml8, .mt16, .mr16, .mb16, .ml16;
+#Paddings(16, 24; 1px);              // .pt16, .pr16, .pb16, .pl16, .pt24, .pr24, .pb24, .pl24;
+#SACSS(font-size; fs; 16, 18; 1px);   // .fs16, .fs18;
+#SACSS(line-height; lh; 24, 28; 1px); // .lh24, .lh28;
+#SACSS(font-weight; fw; 500, 700);    // .fw500, fw700;
+```
+
+```HTML
+<style>
+    .bc\:fff{ background-color: #fff; }
+    .c\:m{ color: #000; }
+    .c\:s{ color: #71717a; }
+    .c\:info{ color:#0891b2; }
+</style>
+
+<figure class="bc:fff tac pt24 pb24 pl24 pr24">
+    <img class="w128 h128 br100% db mla mra mb24" src="./avatar.jpg" alt="avatar" width="128" height="128" />
+    <blockquote class="mb16 fs18 fw700 lh28 c:m">
+      <p class="mb8">“Tailwind CSS is the only framework that I've seen scale on large teams.</p>
+      <p>It’s easy to customize, adapts to any design, and the build size is tiny.”</p>
+    </blockquote>
+    <figcaption class="fs16 lh24">
+      <em class="db c:info fsn fw500">Sarah Dayan</em>
+      <strong class="db c:s fw500">Staff Engineer, Algolia</strong>
+    </figcaption>
+</figure>
+```
+
+
+![img](./img/tailwindcss.jpg)
+
+This demo is copy from home page of [tailwindcss](https://tailwindcss.com/). It's obvious that SACSS do the same thing with less code.
+
+这个示例图片是仿照 [tailwindcss](https://tailwindcss.com/) 官网做的，可以很明显的看到，实现相同的效果我们用了更少的代码。
+
+
+## SACSS name rules
+
+| Declarations         | SACSS     | ACSS       | Tailwind CSS      | Blowdrycss           | Basscss          | Tachyons   |
 | -------------------- | -------- | ----------- | ----------------- | -------------------- | ---------------- | ---------- |
 | `margin: 12px;`      | `.m12`   | `.M(12px)`  | `.m-4`            | `.margin-12`         | `.m2`            | `.ma3`     |
 | `text-align: center` | `.tac`   | `.Ta(c)`    | `.text-center`    | `.text-align-center` | `.center`        | `.tc`      |
@@ -48,87 +109,99 @@ $ npm i sacss;
 | `width: 50%`         | `.w50%`  | `.W(50%)`   | `.w-1/2`          | `.width-50p`         | `.col-6`         | `.w-50`    |
 | `line-height: 1.5`   | `.lh1.5` | `.Lh(1.5)`  | `.leading-normal` | `.line-height-1_5`   | `.line-height-4` | `.lh-copy` |
 
-1. 只取首字母 `.db{ display:block; }`;
-2. 有数字直接连接 `.mb10{ margin-bottom:10px; }`;
-3. 百分号用 `%` 表示 `.w100\%{ width:100%; }`;
-4. 小数点用 `.` 表示 `.lh1\.2{ line-height:1.2 }`;
-5. 有想要自定义的样式，用 `\:`分割 `.c\:fff{ color:#fff; }`
-6. hover 样式，用 `\:`分割 `.db\:h:hover{ display:block; }`
 
-> 第六个只是一个推荐的写法(beta)，目前代码库中并没有这个代码
+1. Just take the first letter: `.db{ display:block; }`;
+2. Direct link number: `.mb10{ margin-bottom:10px; }`;
+3. Symbol use it self with `\` : `.w100\%{ width:100%; } .lh1\.2{ line-height:1.2 }`;
+4. custom values split with `\:` : `.c\:fff{ color:#fff; }`
+5. hover split with  `\:h`, `.fs12{ font-size:12px; } .fs12\:h:hover{ font-size:12px; }`
+
+1. 只取首字母: `.db{ display:block; }`;
+2. 有数字直接连接: `.mb10{ margin-bottom:10px; }`;
+3. 符号直接用 `\` 转义:  `.w100\%{ width:100%; } .lh1\.2{ line-height:1.2 }`;
+4. 想要自定义属性名，用 `\:`分割 `.c\:fff{ color:#fff; }`
+5. hover 样式，用 `\:h`分割 `.fs12{ font-size:12px; } .fs12\:h:hover{ font-size:12px; }`
 
 ## Mixin
 
-| 名称              | 作用                               |
-| ----------------- | ---------------------------------- |
-| Clearfix          | 清除浮动                           |
-| Ellipsis          | 单行文本省略                       |
-| Ellipsis-multiple | 多行文本点点点(移动端)             |
-| Margins           | 用表格的方式撑满浮动之后的剩余空间 |
-| Paddings          | 用表格的方式撑满浮动之后的剩余空间 |
-| ACSS              | 用表格的方式撑满浮动之后的剩余空间 |
+SASS and LESS got the same name mixin.
 
-因为不同的项目，设计规范是不一样的。所以在 `lib/index.css` 里面只提供了，`.m0{ margin:0; } .p0{ padding:0; }` 这两个通用的间距样式。
+SASS 和 LESS 拥有完全相同的 mixin.
 
-其它需要自己使用 mixin 方法 创建 `Margins, Paddings, ACSS`。
+### Mixin Clearfix
 
-```SCSS
-// scss
-@import 'sacss';
-@import 'sacss/mixin.scss';
-
-@include Margins((8,16), 1px);                // .mt8, .mr8, .mb8, .ml8, .mt16, .mr16, .mb16, .ml16;
-@include Paddings((8,16), 1px);               // .pt8, .pr8, .pb8, .pl8, .pt16, .pr16, .pb16, .pl16;
-@include ACSS(font-size, fs, (12,16), 1px);   // .fs12, .fs16
-@include ACSS(line-height, lh, (8,16), 1px);  // .lh16, .lh24
-@include ACSS(font-weight, fw, (300,500));    // .fw300, .fw500
-
-.clearfix{ @include Clearfix; }
-.ell{ @include Ellipsis; }
-.ells { @include Ellipsis-multiple; }
-.cell{ @include Cell; }
-```
+clear float
+清除 float 的浮动
 
 ```less
-// less
-@import 'sacss';
-@import 'sacss/mixin.less';
-
-#Margins(8, 16; 1px);                // .mt8, .mr8, .mb8, .ml8, .mt16, .mr16, .mb16, .ml16;
-#Paddings(8, 16; 1px);               // .pt8, .pr8, .pb8, .pl8, .pt16, .pr16, .pb16, .pl16;
-#ACSS(font-size; fs; 12, 16; 1px);   // .fs12, .fs16;
-#ACSS(line-height; lh; 16, 20; 1px); // .lh16, .lh20;
-#ACSS(font-weight; fw; 300, 500);    // .fw400, fw700;
-
-.clearfix { #Clearfix; }
-.ell { #Ellipsis; }
-.ells { #Ellipsis-multiple; }
-.cell { #Cell;}
+/* 清除浮动 */
+#Clearfix(){
+  &:after{
+    display: table; content: ''; clear: both;
+  }
+}
 ```
+
+### Mixin Ellipsis
+
+Single line text overflow with ellipsis.
+单行文本超出显示`...`；
+
+```less
+#Ellipsis(){ white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+```
+
+### Mixin Ellipsis-multiple
+
+Multiple line text overflow with ellipsis.
+
+多行文本超出显示 `...`
+
+```less
+#Ellipsis-multiple(){ display: -webkit-box; overflow: hidden; word-wrap: break-word; -webkit-box-orient: vertical; }
+```
+
+### Mixin Cell
+
+Fill the left space
+
+撑满剩余空间
+
+```less
+#Cell(){ display: table-cell; *display: inline-block; width: 2000px; *width: auto; }
+```
+
+### Mixin SACSS | Margins | Paddings
+
+help you to create SACSS.
+
+快速创建 SACSS 的代码。
+
+```less
+#SACSS(font-size; fs; 12, 16; 1px);        // .fs12, .fs16;
+#SACSS(line-height; lh; 16, 20, 24; 1px);  // .lh16, .lh20;
+#SACSS(font-weight; fw; 300, 500);         // .fw400, fw700;
+#Margins(8, 16, 24; 1px);                  // .mt8, .mr8, .mb8, .ml8, .mt16, .mr16, .mb16, .ml16;
+#Paddings(8, 16, 24; 1px);                 // .pt8, .pr8, .pb8, .pl8, .pt16, .pr16, .pb16, .pl16;
+```
+
+## CDN
 
 ```HTML
-<style>
-    .c\:main{ color: #333; }
-    .bc\:fff{ background-color: #fff; }
-    .ells._2{ -webkit-line-clamp: 2; }
-    .ells._2.lh16{ max-height: 32px; }
-</style>
-
-<section class="bc:fff c:main fs12 pt16 pr16 pb16 pl16 mt16 mr16 ml16 mb16">
-  <p class="ell">几乎每天我都会光临这样一家咖啡店，当我点了一杯咖啡，他们通常会在咖啡上做一些艺术工作。某一天可能是一个有想象力的树叶，接下来的一天可能是旋涡状的天鹅。这些泡沫上的图案并不会让咖啡更好喝，但是却会让我会心一笑。</p>
-  <p class="ells _2 lh20">几乎每天我都会光临这样一家咖啡店，当我点了一杯咖啡，他们通常会在咖啡上做一些艺术工作。某一天可能是一个有想象力的树叶，接下来的一天可能是旋涡状的天鹅。这些泡沫上的图案并不会让咖啡更好喝，但是却会让我会心一笑。</p>
-  <div class="clearfix">
-    <div class="fl mr8">你好</div>
-    <p class="cell">几乎每天我都会光临这样一家咖啡店，当我点了一杯咖啡，他们通常会在咖啡上做一些艺术工作。某一天可能是一个有想象力的树叶，接下来的一天可能是旋涡状的天鹅。这些泡沫上的图案并不会让咖啡更好喝，但是却会让我会心一笑。</p>
-  </div>
-</section>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sacss">
 ```
 
-## 其它约定
+## Recommended class name
+
+All the style below is not contain in `sacss/index.css`, just recommended to use like this.
+
+以下样式只是推荐约定，并未内置在`sacss/index.css` 文件中。
+
+### color
 
 ```css
 /*!
- * 管理颜色 .c\:{*}
+ *  rules  '.c\:{custome name}'
  */
 .c\:xl { color: #111; }
 .c\:l { color: #333; }
@@ -145,4 +218,42 @@ $ npm i sacss;
 .c\:dark { color: #343a40; }
 ```
 
-> 以上内容只是约定，并未内置在代码中, 你可以定义其中任意颜色值
+### Global style
+
+```Less
+@import 'sacss/mixin.less';
+/*!
+ *  with `g_` start
+ *  Composition with `_` start
+ */
+
+/* global header */
+.g_header{  }
+
+/* global footer */
+.g_footer{  }
+
+/* grid layout row class name */
+@rowWidth: 1008px;
+@gutterWith: 14px;
+.g_row{ width: @rowWidth; margin-left: auto; margin-right: auto; #Clearfix;  } 
+
+/* grid layout column class name */
+.g_col{ width: @rowWidth / 12 - 2 * @gutterWith; float: left; margin-left: @gutterWith; margin-right: @gutterWith; }
+.g_col._2 { width: @rowWidth / 12 * 2 - 2 * @gutterWith; }
+.g_col._3 { width: @rowWidth / 12 * 3 - 2 * @gutterWith; }
+.g_col._4 { width: @rowWidth / 12 * 4 - 2 * @gutterWith; }
+.g_col._5 { width: @rowWidth / 12 * 5 - 2 * @gutterWith; }
+.g_col._6 { width: @rowWidth / 12 * 6 - 2 * @gutterWith; }
+.g_col._7 { width: @rowWidth / 12 * 7 - 2 * @gutterWith; }
+.g_col._8 { width: @rowWidth / 12 * 8 - 2 * @gutterWith; }
+.g_col._9 { width: @rowWidth / 12 * 9 - 2 * @gutterWith; }
+.g_col._10 { width: @rowWidth / 12 * 10 - 2 * @gutterWith; }
+.g_col._11 { width: @rowWidth / 12 * 10 - 2 * @gutterWith; }
+
+/* main container of content, center of the page with the width of 980px */
+@wrapWidth: @rowWidth - 2 * @gutterWith;
+.g_wrap{ width: @wrapWidth; margin-left: auto; margin-right: auto;   } 
+```
+
+

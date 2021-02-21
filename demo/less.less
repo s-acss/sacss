@@ -1,10 +1,10 @@
 @import '../mixin.less';
 
-#Margins(8, 16; 1px); // .mt8, .mr8, .mb8, .ml8, .mt16, .mr16, .mb16, .ml16;
-#Paddings(8, 16; 1px); // .pt8, .pr8, .pb8, .pl8, .pt16, .pr16, .pb16, .pl16;
-#ACSS(font-size; fs; 12, 16; 1px); // .fs12, .fs16;
-#ACSS(line-height; lh; 16, 20; 1px); // .lh16, .lh20;
-#ACSS(font-weight; fw; 300, 500); // .fw400, fw700;
+#Margins(8, 16, 24; 1px); // .mt8, .mr8, .mb8, .ml8, .mt16, .mr16, .mb16, .ml16;
+#Paddings(8, 16, 24; 1px); // .pt8, .pr8, .pb8, .pl8, .pt16, .pr16, .pb16, .pl16;
+#SACSS(font-size; fs; 12, 16; 1px); // .fs12, .fs16;
+#SACSS(line-height; lh; 16, 20, 24; 1px); // .lh16, .lh20;
+#SACSS(font-weight; fw; 300, 500); // .fw400, fw700;
 
 .clearfix {
   #Clearfix;
@@ -17,4 +17,13 @@
 }
 .cell {
   #Cell;
+}
+
+.c\:m{ color: #000; }
+.c\:s{ color: #71717a; }
+.c\:info{ color:#0891b2; }
+
+figure, blockquote, p,body{
+  margin: 0;
+  padding: 0;
 }

@@ -7,7 +7,7 @@
  * @list: 值列表
  * @unit: 单位换算表达式, 默认为1px, 想要 rem 填写 1/16*1rem
  */
-@mixin ACSS($prop: false, $name: '', $list: (), $unit: false) {
+@mixin SACSS($prop: false, $name: '', $list: (), $unit: false) {
   @each $item in $list {
     .#{$name}#{$item } {
       #{$prop}: if($unit, $item * $unit, $item);
@@ -21,10 +21,10 @@
  * @unit: 单位换算表达式, 默认为1px, 想要 rem 填写 1/16*1rem
  */
 @mixin Margins($list, $unit) {
-  @include ACSS(margin-top, mt, $list, $unit);
-  @include ACSS(margin-bottom, mb, $list, $unit);
-  @include ACSS(margin-right, mr, $list, $unit);
-  @include ACSS(margin-left, ml, $list, $unit);
+  @include SACSS(margin-top, mt, $list, $unit);
+  @include SACSS(margin-bottom, mb, $list, $unit);
+  @include SACSS(margin-right, mr, $list, $unit);
+  @include SACSS(margin-left, ml, $list, $unit);
 }
 
 /**
@@ -33,10 +33,10 @@
  * @unit: 单位换算表达式, 默认为1px, 想要 rem 填写 1/16*1rem
  */
 @mixin Paddings($list, $unit) {
-  @include ACSS(padding-top, pt, $list, $unit);
-  @include ACSS(padding-right, pr, $list, $unit);
-  @include ACSS(padding-bottom, pb, $list, $unit);
-  @include ACSS(padding-left, pl, $list, $unit);
+  @include SACSS(padding-top, pt, $list, $unit);
+  @include SACSS(padding-right, pr, $list, $unit);
+  @include SACSS(padding-bottom, pb, $list, $unit);
+  @include SACSS(padding-left, pl, $list, $unit);
 }
 
 /*
