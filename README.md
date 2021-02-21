@@ -9,6 +9,7 @@ A utility-first CSS framework with strict classes name rule that can be composed
 It attempts to solve the same problems as [tailwindcss](https://tailwindcss.com/) but in [Atomic css](https://acss.io/) way.
 
 [![npm package][npm-badge]][npm-url] 
+[![jsdelivr][jsdelivr-badge]][jsdelivr-url]
 [![github][git-badge]][git-url] 
 
 [npm-badge]: https://img.shields.io/npm/v/sacss.svg
@@ -16,8 +17,8 @@ It attempts to solve the same problems as [tailwindcss](https://tailwindcss.com/
 [npm-downloads]: https://img.shields.io/npm/dw/sacss
 [git-url]: https://github.com/ziven27/SACSS
 [git-badge]: https://img.shields.io/github/stars/ziven27/SACSS.svg?style=social
-[jsdelivr-badge]: https://data.jsdelivr.com/v1/package/npm/ziven27/SACSS/badge
-[jsdelivr-url]: https://www.jsdelivr.com/package/npm/ziven27/SACSS
+[jsdelivr-badge]: https://data.jsdelivr.com/v1/package/npm/sacss/badge
+[jsdelivr-url]: https://www.jsdelivr.com/package/npm/sacss
 
 
 静态的 Atomic CSS，是一套具有严格命名规则的 CSS 解决方案，目标是希望让你只需要在 HTML 中就可以快速实现设计原型，而不需要在 HTML 和 CSS 之间来回切换。
@@ -116,6 +117,8 @@ This demo is copy from home page of [tailwindcss](https://tailwindcss.com/). It'
 4. custom values split with `\:` : `.c\:fff{ color:#fff; }`
 5. hover split with  `\:h`, `.fs12{ font-size:12px; } .fs12\:h:hover{ font-size:12px; }`
 
+------ 
+
 1. 只取首字母: `.db{ display:block; }`;
 2. 有数字直接连接: `.mb10{ margin-bottom:10px; }`;
 3. 符号直接用 `\` 转义:  `.w100\%{ width:100%; } .lh1\.2{ line-height:1.2 }`;
@@ -183,12 +186,6 @@ help you to create SACSS.
 #SACSS(font-weight; fw; 300, 500);         // .fw400, fw700;
 #Margins(8, 16, 24; 1px);                  // .mt8, .mr8, .mb8, .ml8, .mt16, .mr16, .mb16, .ml16;
 #Paddings(8, 16, 24; 1px);                 // .pt8, .pr8, .pb8, .pl8, .pt16, .pr16, .pb16, .pl16;
-```
-
-## CDN
-
-```HTML
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sacss">
 ```
 
 ## Recommended class name
