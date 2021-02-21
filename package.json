@@ -1,12 +1,12 @@
 {
-  "name": "@_nu/css-acss",
+  "name": "sacss",
   "version": "0.0.2",
   "description": "Atomic CSS / utility-first CSS / Functional CSS",
   "author": "ziven27",
   "license": "MIT",
-  "repository": "git@github.com:ziven27/static-acss.git",
-  "bugs": "https://github.com/ziven27/static-acss/issues",
-  "homepage": "https://github.com/ziven27/static-acss/blob/master/README.md",
+  "repository": "git@github.com:ziven27/SACSS.git",
+  "bugs": "https://github.com/ziven27/SACSS/issues",
+  "homepage": "https://ziven27.github.io/sacss",
   "main": "index.css",
   "scripts": {
     "start": "gulp",
