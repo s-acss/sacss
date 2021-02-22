@@ -1,6 +1,6 @@
 {
   "name": "sacss",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Atomic CSS / utility-first CSS / Functional CSS",
   "author": "ziven27",
   "license": "MIT",
@@ -27,7 +27,7 @@
     "utility-first",
     "functional"
   ],
-  "dependencies": {
+  "devDependencies": {
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^7.0.1",
     "gulp-clean-css": "^4.2.0",
