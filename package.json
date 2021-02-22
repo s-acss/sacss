@@ -1,6 +1,6 @@
 {
   "name": "sacss",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Static Atomic CSS, Rapidly build modern websites without ever leaving your HTML.",
   "author": "ziven27",
   "license": "MIT",
@@ -12,11 +12,6 @@
     "start": "gulp",
     "build": "gulp build"
   },
-  "files": [
-    "lib",
-    "demo",
-    "src"
-  ],
   "keywords": [
     "CSS",
     "ACSS",
