@@ -1,12 +1,17 @@
 {
   "name": "sacss",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Static Atomic CSS, Rapidly build modern websites without ever leaving your HTML.",
   "author": "ziven27",
   "license": "MIT",
-  "repository": "git@github.com:ziven27/SACSS.git",
-  "bugs": "https://github.com/ziven27/SACSS/issues",
-  "homepage": "https://ziven27.github.io/sacss",
+  "bugs": {
+    "url": "https://github.com/ziven27/SACSS/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:ziven27/SACSS.git"
+  },
+  "homepage": "https://ziven27.github.io/SACSS",
   "main": "index.css",
   "scripts": {
     "start": "gulp",

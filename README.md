@@ -51,7 +51,7 @@ $ npm i sacss;
 .
 ├── mixin.less   // less Mixin
 ├── mixin.scss   // sass Mixin
-└── index.css    // core css pacakge
+└── index.css    // core css package
 ```
 
 ## use
