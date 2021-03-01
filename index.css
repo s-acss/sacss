@@ -68,11 +68,13 @@
 .t0{top:0}
 .t100\%{top:100%}
 .t50\%{top:50%}
+.mw100\%{max-width:100%}
 .tac{text-align:center}
 .taj{text-align:justify}
 .tal{text-align:left}
 .tar{text-align:right}
 .tdn{text-decoration:none}
+.tdu{text-decoration:underline}
 .tlf{table-layout:fixed}
 .ttc{text-transform:capitalize}
 .ttl{text-transform:lowercase}
