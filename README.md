@@ -192,7 +192,7 @@ Custom unit
 
 ```less
 #SACSS(font-size; fs; 12, 16; 1/16 * 1rem); // .fs12{ fontsize: 12 * 1 /16 *1rem; } .fs16{ fontsize: 16 * 1 /16 *1rem; }
-``
+```
 
 ## Recommended class name
 
