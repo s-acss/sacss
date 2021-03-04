@@ -4,7 +4,6 @@
 @include Paddings((8, 16), 1px); // .pt8, .pr8, .pb8, .pl8, .pt16, .pr16, .pb16, .pl16;
 @include SACSS(font-size, fs, (12, 16), 1px); // .fs12, .fs16
 @include SACSS(line-height, lh, (8, 16), 1px); // .lh16, .lh24
-@include SACSS(font-weight, fw, (300, 500)); // .fw300, .fw500
 
 .clearfix {
   @include Clearfix;

@@ -182,10 +182,17 @@ help you to create SACSS.
 ```less
 #SACSS(font-size; fs; 12, 16; 1px);        // .fs12, .fs16;
 #SACSS(line-height; lh; 16, 20, 24; 1px);  // .lh16, .lh20;
-#SACSS(font-weight; fw; 300, 500);         // .fw400, fw700;
 #Margins(8, 16, 24; 1px);                  // .mt8, .mr8, .mb8, .ml8, .mt16, .mr16, .mb16, .ml16;
 #Paddings(8, 16, 24; 1px);                 // .pt8, .pr8, .pb8, .pl8, .pt16, .pr16, .pb16, .pl16;
 ```
+
+Custom unit
+
+自定义单位
+
+```less
+#SACSS(font-size; fs; 12, 16; 1/16 * 1rem); // .fs12{ fontsize: 12 * 1 /16 *1rem; } .fs16{ fontsize: 16 * 1 /16 *1rem; }
+``
 
 ## Recommended class name
 
