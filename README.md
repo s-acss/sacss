@@ -72,21 +72,20 @@ $ npm i sacss;
 
 ```HTML
 <style>
-    .bc\:fff{ background-color: #fff; }
-    .c\:m{ color: #000; }
-    .c\:s{ color: #71717a; }
-    .c\:info{ color:#0891b2; }
+    .c_m{ color: #000; }
+    .c_s{ color: #71717a; }
+    .c_info{ color:#0891b2; }
 </style>
 
-<figure class="bc:fff tac pt24 pb24 pl24 pr24">
+<figure class="bc_fff tac pt24 pb24 pl24 pr24">
     <img class="w128 h128 br100% db mla mra mb24" src="./avatar.jpg" alt="avatar" width="128" height="128" />
-    <blockquote class="mb16 fs18 fw700 lh28 c:m">
+    <blockquote class="mb16 fs18 fw700 lh28 c_m">
       <p class="mb8">“Tailwind CSS is the only framework that I've seen scale on large teams.</p>
       <p>It’s easy to customize, adapts to any design, and the build size is tiny.”</p>
     </blockquote>
     <figcaption class="fs16 lh24">
-      <em class="db c:info fsn fw500">Sarah Dayan</em>
-      <strong class="db c:s fw500">Staff Engineer, Algolia</strong>
+      <em class="db c_info fsn fw500">Sarah Dayan</em>
+      <strong class="db c_s fw500">Staff Engineer, Algolia</strong>
     </figcaption>
 </figure>
 ```
@@ -114,7 +113,7 @@ This demo is copy from home page of [tailwindcss](https://tailwindcss.com/). It'
 1. Just take the first letter: `.db{ display:block; }`;
 2. Direct link number: `.mb10{ margin-bottom:10px; }`;
 3. Symbol use it self with `\` : `.w100\%{ width:100%; } .lh1\.2{ line-height:1.2 }`;
-4. custom values split with `\:` : `.c\:fff{ color:#fff; }`
+4. custom values split with `_` : `.c_fff{ color:#fff; }`
 5. hover split with  `\:h`, `.fs12{ font-size:12px; } .fs12\:h:hover{ font-size:12px; }`
 
 ------ 
@@ -122,7 +121,7 @@ This demo is copy from home page of [tailwindcss](https://tailwindcss.com/). It'
 1. 只取首字母: `.db{ display:block; }`;
 2. 有数字直接连接: `.mb10{ margin-bottom:10px; }`;
 3. 符号直接用 `\` 转义:  `.w100\%{ width:100%; } .lh1\.2{ line-height:1.2 }`;
-4. 想要自定义属性名，用 `\:`分割 `.c\:fff{ color:#fff; }`
+4. 其它，或自定义样式，用 `_`分割 `.c_fff{ color:#fff; }`
 5. hover 样式，用 `\:h`分割 `.fs12{ font-size:12px; } .fs12\:h:hover{ font-size:12px; }`
 
 ## Mixin
@@ -190,29 +189,50 @@ help you to create SACSS.
 
 ## Recommended class name
 
-All the style below is not contain in `sacss/index.css`, just recommended to use like this.
+Only `bc_fff`, `bc_000`, `c_000`,`c_fff` inside of `sacss/index.css`。
 
-以下样式只是推荐约定，并未内置在`sacss/index.css` 文件中。
+只有 `bc_fff`, `bc_000`, `c_000`,`c_fff` 这四个颜色相关样式内置在 `sacss/index.css` 文件中。
+
+### except
+
+```
+.bc_fff {
+  background-color: #fff;
+}
+.bc_000 {
+  background-color: #000;
+}
+.c_000 {
+  color: #000;
+}
+.c_fff {
+  color: #fff;
+}
+```
+
+The other style below is not contain in `sacss/index.css`, just recommended to use like this.
+
+其它的样式只是推荐约定，并未内置在`sacss/index.css` 文件中。
 
 ### color
 
 ```css
 /*!
- *  rules  '.c\:{custome name}'
+ *  rules  '.c_{custome name}{ color: value; }}'
  */
-.c\:xl { color: #111; }
-.c\:l { color: #333; }
-.c\:m { color: #666; }
-.c\:s { color: #999; }
-.c\:xs { color: #ddd; }
-.c\:primary { color: blue; }
-.c\:secondary { color: gray; }
-.c\:danger { color: red; }
-.c\:warning { color: yellow; }
-.c\:success { color: green; }
-.c\:info { color: cadetblue; }
-.c\:light { color: #f8f9fa; }
-.c\:dark { color: #343a40; }
+.c_xl { color: #111; }
+.c_l { color: #333; }
+.c_m { color: #666; }
+.c_s { color: #999; }
+.c_xs { color: #ddd; }
+.c_primary { color: blue; }
+.c_secondary { color: gray; }
+.c_danger { color: red; }
+.c_warning { color: yellow; }
+.c_success { color: green; }
+.c_info { color: cadetblue; }
+.c_light { color: #f8f9fa; }
+.c_dark { color: #343a40; }
 ```
 
 ### Global style
