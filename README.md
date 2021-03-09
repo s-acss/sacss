@@ -20,7 +20,6 @@ It attempts to solve the same problems as [tailwindcss](https://tailwindcss.com/
 [jsdelivr-badge]: https://data.jsdelivr.com/v1/package/npm/sacss/badge
 [jsdelivr-url]: https://www.jsdelivr.com/package/npm/sacss
 
-
 静态的 Atomic CSS，是一套具有严格命名规则的 CSS 解决方案，目标是希望让你只需要在 HTML 中就可以快速实现设计原型，而不需要在 HTML 和 CSS 之间来回切换。
 
 这和 [tailwindcss](https://tailwindcss.com/) 要解决的问题是一样的，但不同的是以 [Atomic css](https://acss.io/) 的方式。
@@ -38,6 +37,17 @@ It attempts to solve the same problems as [tailwindcss](https://tailwindcss.com/
  [Atomic css](https://acss.io/) 提供了一套严格 class 的命名规则。基于 [Atomizer](https://github.com/acss-io/atomizer) 这个构建工具，你在 HTML 中每写一个符合这套命名规则的 class，CSS 文件中会自动添加对应的 CSS 样式。
 
  [SACSS](https://ziven27.github.io/sacss) 提供了一套 class 的命名规则，和一些能覆盖大部分样式的 CSS 类库（同样基于这套命名规则）。同时还提供了一些常用复杂样式的 SASS 和 LESS 的 mixin，你可以使用自己的命名规则去使用这些 mixin。
+
+## best practice
+
+SACSS does not cover all scenarios, The best practice is to dovetail design materials and CSS style layout. 
+
+SACSS 并不能覆盖所有的场景，最佳实践是对接设计物料和 CSS 样式布局.
+
+[Figma token to code](https://www.figma.com/community/plugin/759651077059504375/Token--%3E-Code) This plugin can automatically help you to get the SACSS code from the Figma design.
+
+[Figma token to code](https://www.figma.com/community/plugin/759651077059504375/Token--%3E-Code) 这个插件能自动帮你从 Figma 设计稿中，获取 SACSS 代码。
+
 
 ## install
 
@@ -217,9 +227,9 @@ Only `bc_fff`, `bc_000`, `c_000`,`c_fff` inside of `sacss/index.css`。
 }
 ```
 
-The other style below is not contain in `sacss/index.css`, just recommended to use like this.
+The other style below is not contain in `sacss/index.css` just recommended conventions.
 
-其它的样式只是推荐约定，并未内置在`sacss/index.css` 文件中。
+其它的样式只是推荐约定，并未内置在 `sacss/index.css` 文件中。
 
 ### color
 

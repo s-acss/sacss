@@ -28,8 +28,6 @@
 .lh16{line-height:16px}
 .lh20{line-height:20px}
 .lh24{line-height:24px}
-.fw300{font-weight:300}
-.fw500{font-weight:500}
 .clearfix:after{display:table;content:'';clear:both}
 .ell{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .ells{display:-webkit-box;overflow:hidden;word-wrap:break-word;-webkit-box-orient:vertical}
