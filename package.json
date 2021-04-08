@@ -10,7 +10,8 @@
   "main": "index.css",
   "scripts": {
     "start": "gulp",
-    "build": "gulp build"
+    "build": "gulp build",
+    "prepublishOnly": "npm run build"
   },
   "files": [
     "demo",
