@@ -1,6 +1,6 @@
 {
   "name": "sacss",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Static Atomic CSS, Rapidly build modern websites without ever leaving your HTML.",
   "author": "ziven27",
   "license": "MIT",
@@ -17,7 +17,9 @@
     "demo",
     "index.css",
     "mixin.less",
-    "mixin.scss"
+    "mixin.scss",
+    "mixin",
+    "lang"
   ],
   "keywords": [
     "CSS",
