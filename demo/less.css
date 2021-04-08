@@ -29,9 +29,10 @@
 .lh20{line-height:20px}
 .lh24{line-height:24px}
 .clearfix:after{display:table;content:'';clear:both}
-.ell{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.ells{display:-webkit-box;overflow:hidden;word-wrap:break-word;-webkit-box-orient:vertical}
+.ellipsis{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .cell{display:table-cell;width:2000px}
+.ellipsis-mul{display:-webkit-box;overflow:hidden;word-wrap:break-word;-webkit-box-orient:vertical}
+.ellipsis-mul._2row{-webkit-line-clamp:2}
 .c_m{color:#000}
 .c_s{color:#71717a}
 .c_info{color:#0891b2}

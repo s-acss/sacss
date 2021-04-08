@@ -1,0 +1,317 @@
+/*
+  * # 命名规则
+  * 1. 只取首字母 `.db{ display:block; }`;
+  * 2. 有数字直接连接 `.mb10{ margin-bottom:10px; }`;
+  * 3. 百分号用 `\%` 表示 `.w100\%{ width:100%; }`;
+  * 4. 小数点用 `\.` 表示 `.lh1\.2{ line-height:1.2}`;
+  * 5. 有想要自定义的样式，用 `\:`分割  `.c\:fff{ color:#fff; }`
+  * 6. hover 样式，用 `\:`分割  `.db\:h:hover{ display:block; }`
+  */
+
+#_SACSS(@pre: ''){
+  @prefix: escape(@pre);
+  .@{prefix}aic {
+    align-items: center;
+  }
+  .@{prefix}aife {
+    align-items: flex-end;
+  }
+  .@{prefix}aifs {
+    align-items: flex-start;
+  }
+  .@{prefix}b0 {
+    bottom: 0;
+  }
+  .@{prefix}bct {
+    background-color: transparent;
+  }
+  .@{prefix}bn {
+    border: none;
+  }
+  .@{prefix}br0 {
+    border-radius: 0;
+  }
+  .@{prefix}br100\% {
+    border-radius: 100%;
+  }
+  .@{prefix}bsbb {
+    box-sizing: border-box;
+  }
+  .@{prefix}bc_fff {
+    background-color: #fff;
+  }
+  .@{prefix}bc_000 {
+    background-color: #000;
+  }
+  .@{prefix}c_000 {
+    color: #000;
+  }
+  .@{prefix}c_fff {
+    color: #fff;
+  }
+  .@{prefix}cb {
+    clear: both;
+  }
+  .@{prefix}cp {
+    cursor: pointer;
+  }
+  .@{prefix}db {
+    display: block;
+  }
+  .@{prefix}df {
+    display: flex;
+  }
+  .@{prefix}di {
+    display: inline;
+  }
+  .@{prefix}dib {
+    display: inline-block;
+  }
+  .@{prefix}dif {
+    display: inline-flex;
+  }
+  .@{prefix}dn {
+    display: none;
+  }
+  .@{prefix}dt {
+    display: table;
+  }
+  .@{prefix}dtc {
+    display: table-cell;
+  }
+  .@{prefix}f1 {
+    flex: 1;
+    min-width: 0;
+  }
+  .@{prefix}fa {
+    flex: auto;
+  }
+  .@{prefix}fdc {
+    flex-direction: column;
+  }
+  .@{prefix}fdr {
+    flex-direction: row;
+  }
+  .@{prefix}fi {
+    font: inherit;
+  }
+  .@{prefix}fl {
+    float: left;
+    *display: inline;
+  }
+  .@{prefix}fr {
+    float: right;
+  }
+  .@{prefix}fs0 {
+    font-size: 0;
+  }
+  .@{prefix}fs1 {
+    flex-shrink: 1;
+  }
+  .@{prefix}fsi {
+    font-style: italic;
+  }
+  .@{prefix}fsn {
+    font-style: normal;
+  }
+  .@{prefix}fvsc {
+    font-variant: small-caps;
+    text-transform: lowercase;
+  }
+  .@{prefix}fw100{
+    font-weight: 100;
+  }
+  .@{prefix}fw200{
+    font-weight: 200;
+  }
+  .@{prefix}fw300{
+    font-weight: 300;
+  }
+  .@{prefix}fw400 {
+    font-weight: 400;
+  }
+  .@{prefix}fw500 {
+    font-weight: 500;
+  }
+  .@{prefix}fw600 {
+    font-weight: 600;
+  }
+  .@{prefix}fw700 {
+    font-weight: 700;
+  }
+  .@{prefix}fw800 {
+    font-weight: 800;
+  }
+  .@{prefix}fw900 {
+    font-weight: 900;
+  }
+  .@{prefix}fwn {
+    font-weight: normal;
+  }
+  /* 重名所以忽略掉不常用的 */
+  //.fwn { flex-wrap: nowrap; }
+  .@{prefix}fww {
+    flex-wrap: wrap;
+  }
+  .@{prefix}h100\% {
+    height: 100%;
+  }
+  .@{prefix}jcc {
+    justify-content: center;
+  }
+  .@{prefix}jcfe {
+    justify-content: flex-end;
+  }
+  .@{prefix}jcsa {
+    justify-content: space-around;
+  }
+  .@{prefix}jcsb {
+    justify-content: space-between;
+  }
+  .@{prefix}l0 {
+    left: 0;
+  }
+  .@{prefix}l100\% {
+    left: 100%;
+  }
+  .@{prefix}l50\% {
+    left: 50%;
+  }
+  .@{prefix}lh1 {
+    line-height: 1;
+  }
+  .@{prefix}lh1\.2 {
+    line-height: 1.2;
+  }
+  .@{prefix}lh1\.5 {
+    line-height: 1.5;
+  }
+  .@{prefix}lh1\.8 {
+    line-height: 1.8;
+  }
+  .@{prefix}lsn {
+    list-style: none;
+  }
+  .@{prefix}m0 {
+    margin: 0;
+  }
+  .@{prefix}mla {
+    margin-left: auto;
+  }
+  .@{prefix}mra {
+    margin-right: auto;
+  }
+  .@{prefix}mta {
+    margin-top: auto;
+  }
+  .@{prefix}mba {
+    margin-bottom: auto;
+  }
+  .@{prefix}o0 {
+    opacity: 0;
+  }
+  .@{prefix}oa {
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .@{prefix}oh {
+    overflow: hidden;
+  }
+  .@{prefix}p0 {
+    padding: 0;
+  }
+  .@{prefix}pa {
+    position: absolute;
+  }
+  .@{prefix}pen {
+    pointer-events: none;
+  }
+  .@{prefix}pf {
+    position: fixed;
+  }
+  .@{prefix}pr {
+    position: relative;
+  }
+  .@{prefix}pt100\% {
+    padding-top: 100%;
+  }
+  .@{prefix}r0 {
+    right: 0;
+  }
+  .@{prefix}r100\% {
+    right: 100%;
+  }
+  .@{prefix}t0 {
+    top: 0;
+  }
+  .@{prefix}t100\% {
+    top: 100%;
+  }
+  .@{prefix}t50\% {
+    top: 50%;
+  }
+  .@{prefix}mw100\%{
+    max-width: 100%;
+  }
+  .@{prefix}tac {
+    text-align: center;
+  }
+  .@{prefix}taj {
+    text-align: justify;
+  }
+  .@{prefix}tal {
+    text-align: left;
+  }
+  .@{prefix}tar {
+    text-align: right;
+  }
+  .@{prefix}tdn {
+    text-decoration: none;
+  }
+  .@{prefix}tdu {
+    text-decoration: underline;
+  }
+  .@{prefix}tlf {
+    table-layout: fixed;
+  }
+  .@{prefix}ttc {
+    text-transform: capitalize;
+  }
+  .@{prefix}ttl {
+    text-transform: lowercase;
+  }
+  .@{prefix}ttn {
+    text-transform: none;
+  }
+  .@{prefix}ttu {
+    text-transform: uppercase;
+  }
+  .@{prefix}usn {
+    user-select: none;
+  }
+  .@{prefix}vam {
+    vertical-align: middle;
+  }
+  .@{prefix}vat {
+    vertical-align: top;
+  }
+  .@{prefix}vh {
+    visibility: hidden;
+  }
+  .@{prefix}w100\% {
+    width: 100%;
+  }
+  .@{prefix}wan {
+    -webkit-appearance: none;
+  }
+  .@{prefix}wsn {
+    white-space: nowrap;
+  }
+  .@{prefix}wwbw {
+    word-wrap: break-word;
+    word-break: break-all;
+  }
+  .@{prefix}zi1 {
+    z-index: 1;
+  }
+}

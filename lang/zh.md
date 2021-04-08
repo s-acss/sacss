@@ -1,12 +1,12 @@
 # Static Atomic CSS.
 
-[简体中文](./lang/zh.md) ｜ 英文
+简体中文 ｜ [English](../README.md)
 
 Rapidly build modern websites without ever leaving your HTML.
 
-A utility-first CSS framework with strict classes name rule that can be composed to build any design, directly in your markup.
+静态的 Atomic CSS，是一套具有严格命名规则的 CSS 解决方案，目标是希望让你只需要在 HTML 中就可以快速实现设计原型，而不需要在 HTML 和 CSS 之间来回切换。
 
-It attempts to solve the same problems as [tailwindcss](https://tailwindcss.com/) but in [Atomic css](https://acss.io/) way.
+这和 [tailwindcss](https://tailwindcss.com/) 要解决的问题是一样的，但不同的是以 [Atomic css](https://acss.io/) 的方式。
 
 [![npm package][npm-badge]][npm-url] 
 [![jsdelivr][jsdelivr-badge]][jsdelivr-url]
@@ -21,29 +21,29 @@ It attempts to solve the same problems as [tailwindcss](https://tailwindcss.com/
 [jsdelivr-url]: https://www.jsdelivr.com/package/npm/sacss
 
 
-## Different
 
- [tailwindcss](https://tailwindcss.com/) give you a CSS package with classes like `flex`, `pt-4`, `text-center`.
+## 对比其它方案
+
+ [tailwindcss](https://tailwindcss.com/) 提供了一套有类似 `flex`, `pt-4`, `text-center` 这样命名的 CSS 的类库。
  
- [Atomic css](https://acss.io/) give you a set of naming rules to write class. Base on a builder [Atomizer](https://github.com/acss-io/atomizer), the CSS file is created automatically.
- 
- [SACSS](https://ziven27.github.io/sacss) give you a CSS package for quick start. A set of naming rules (easier Atomic CSS ) to extend the package. SASS and LESS mixin provide aliases for most properties that can name in your own way.
+ [Atomic css](https://acss.io/) 提供了一套严格 class 的命名规则。基于 [Atomizer](https://github.com/acss-io/atomizer) 这个构建工具，你在 HTML 中每写一个符合这套命名规则的 class，CSS 文件中会自动添加对应的 CSS 样式。
 
-## best practice
+ [SACSS](https://ziven27.github.io/sacss) 提供了一套 class 的命名规则，和一些能覆盖大部分样式的 CSS 类库（同样基于这套命名规则）。同时还提供了一些常用复杂样式的 SASS 和 LESS 的 mixin，你可以使用自己的命名规则去使用这些 mixin。
 
-SACSS does not cover all scenarios, The best practice is to dovetail design materials and CSS style layout. 
+## 最佳实践
+
+SACSS 并不能覆盖所有的场景，最佳实践是对接设计物料和 CSS 样式布局.
+
+[Figma token to code](https://www.figma.com/community/plugin/759651077059504375/Token--%3E-Code) 这个插件能自动帮你从 Figma 设计稿中，获取 SACSS 代码。
 
 
-[Figma token to code](https://www.figma.com/community/plugin/759651077059504375/Token--%3E-Code) This plugin can automatically help you to get the SACSS code from the Figma design.
-
-
-## install
+## 安装
 
 ```bash
 $ npm i sacss;
 ```
 
-## tree
+## 目录结构
 
 ```bash
 .
@@ -52,9 +52,9 @@ $ npm i sacss;
 └── index.css    // core css package
 ```
 
-## use
+## 使用
 
-![img](./img/thumb.png)
+![img](../img/thumb.png)
 
 ```less
 // less
@@ -89,12 +89,12 @@ $ npm i sacss;
 ```
 
 
-![img](./img/tailwindcss.jpg)
+![img](../img/tailwindcss.jpg)
 
-This demo is copy from home page of [tailwindcss](https://tailwindcss.com/).
+这个示例图片是仿照 [tailwindcss](https://tailwindcss.com/) 官网做的，可以很明显的看到，实现相同的效果我们用了更少的代码。
 
 
-## SACSS name rules
+## SACSS 命名规则
 
 | Declarations         | SACSS     | ACSS       | Tailwind CSS      | Blowdrycss           | Basscss          | Tachyons   |
 | -------------------- | -------- | ----------- | ----------------- | -------------------- | ---------------- | ---------- |
@@ -106,27 +106,26 @@ This demo is copy from home page of [tailwindcss](https://tailwindcss.com/).
 | `line-height: 1.5`   | `.lh1.5` | `.Lh(1.5)`  | `.leading-normal` | `.line-height-1_5`   | `.line-height-4` | `.lh-copy` |
 
 
-1. Just take the first letter: `.db{ display:block; }`;
-2. Direct link number: `.mb10{ margin-bottom:10px; }`;
-3. Symbol use it self with `\` : `.w100\%{ width:100%; } .lh1\.2{ line-height:1.2 }`;
-4. custom values split with `_` : `.c_fff{ color:#fff; }`
-5. hover split with  `\:h`, `.fs12{ font-size:12px; } .fs12\:h:hover{ font-size:12px; }`
-
+1. 只取首字母: `.db{ display:block; }`;
+2. 有数字直接连接: `.mb10{ margin-bottom:10px; }`;
+3. 符号直接用 `\` 转义:  `.w100\%{ width:100%; } .lh1\.2{ line-height:1.2 }`;
+4. 其它，或自定义样式，用 `_`分割 `.c_fff{ color:#fff; }`
+5. hover 样式，用 `\:h`分割 `.fs12{ font-size:12px; } .fs12\:h:hover{ font-size:12px; }`
 
 ## Mixin
 
-SASS and LESS got the same name mixin.
+SASS 和 LESS 拥有完全相同的 mixin.
 
-1. `Clearfix`: clear float;
-2. `Ellipsis`: Single line text overflow with ellipsis.
-3. `Ellipsis-multiple`: Multiple line text overflow with ellipsis.
-4. `Cell`: Fill the left space
-5. `Margins`: Create `margin-top` `margin-right` `margin-bottom` `margin-left` at same time;
-6: `Paddings`: Create `padding-top` `padding-right` `padding-bottom` `padding-left` at same time;
-7: `SACSS`: create SACSS in short hand;
-8: `_SACSS`: mixin of all css style in `index.css`, you can use this to add prefix for each rules;
+1. `Clearfix`: 清除 float 的浮动;
+2. `Ellipsis`: 单行文本超出显示`...`；
+3. `Ellipsis-multiple`: 多行文本超出显示 `...`;
+4. `Cell`: 在浮动布局中撑满剩余空间;
+5. `Margins`: 同时创建四个方向的外间距 `margin-top` `margin-right` `margin-bottom` `margin-left`;
+6: `Paddings`: 同时创建四个方向的内间距 `padding-top` `padding-right` `padding-bottom` `padding-left`;
+7: `SACSS`: 辅助你快速创建 SACSS;
+8: `_SACSS`: 执行这个方法会输出全部的 `index.css` 文件中的代码，目的是方便你为所有样式添加统一前缀（默认不加）;
 
-![img](./img/demo.png)
+![img](../img/demo.png)
 
 
 ``` less
@@ -161,50 +160,52 @@ SASS and LESS got the same name mixin.
 <div>
 ```
 
-### Prefix
+### 统一添加前缀
 
-with this mixin `_SACSS`，you can and prefix to each rules.
+如果你觉得默认的 CSS 样式会造成全局污染，可以通过 `_SACSS` 这个方法去为每一条样式添加统一前缀
 
-> For a better development experience, use pure `index.css`(without any prefix) is recommended.
+> 为了更好的开发体验, 我门还是推荐使用不带前缀的 `index.css` 文件.
 
 ```less
 @import 'sacss/mixin.less';
 
 @prefix:'acss_';
-#_SACSS(@prefix); // all the rules will with `acss_`（except other mixin）
+#_SACSS(@prefix); // 所有的默认的样式都会添加统一的前缀（其它Mixin需要手动添加前缀）
 
-#SACSS(font-size; escape('@{prefix}fs'); 12, 16; 1px); // .acss_fs12, .acss_fs16;
+// .acss_fs12, .acss_fs16;
+#SACSS(font-size; escape('@{prefix}fs'); 12, 16; 1px); // 其它Mixin需要手动添加前缀 
 
-// ...other mixin
+// ...其它代码
 ```
 
 ```sass
 @import 'sacss/mixin.scss';
 
 $prefix:'acss_';
-@inclued _SACSS($prefix); // all the rules will with `acss_`
+@inclued _SACSS($prefix); // 所有的默认的样式都会添加统一的前缀
 
 // .acss_fs12, .acss_fs16
-@inclued SACSS(font-size; #{$prefix}fs; 12, 16; 1px); // Add prefix manually
+@inclued SACSS(font-size; #{$prefix}fs; 12, 16; 1px); // 其它Mixin需要手动添加前缀
 
-// ...other mixin
+// ...其它代码
 ```
 
 
 
-## Recommended class name
+## 推荐的命名规则
 
-Only `bc_fff`, `bc_000`, `c_000`,`c_fff` inside of `sacss/index.css`。
-The other style below is not contain in `sacss/index.css` just recommended conventions.
+只有 `bc_fff`, `bc_000`, `c_000`,`c_fff` 这四个颜色相关样式内置在 `sacss/index.css` 文件中。
 
-```
-.bc_fff { background-color: #fff; }
+其它的样式只是推荐约定，并未内置在 `sacss/index.css` 文件中。
+
+```css
+.bc_fff { background-color: #fff;}
 .bc_000 { background-color: #000; }
 .c_000 { color: #000; }
 .c_fff { color: #fff; }
 ```
 
-### color
+### 颜色
 
 ```css
 /*!
@@ -224,3 +225,4 @@ The other style below is not contain in `sacss/index.css` just recommended conve
 .c_light { color: #f8f9fa; }
 .c_dark { color: #343a40; }
 ```
+
