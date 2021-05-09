@@ -9,6 +9,18 @@ module.exports = {
   favicon: 'img/favicon.ico',
   organizationName: 'ziven27', // Usually your GitHub org/user name.
   projectName: 'sacss', // Usually your repo name.
+  i18n: {
+    defaultLocale: 'en',
+    locales: ['en', 'zh-cn'],
+    localeConfigs: {
+      en: {
+        label: 'English',
+      },
+      'zh-cn': {
+        label: '简体中文',
+      },
+    },
+  },
   themeConfig: {
     navbar: {
       title: 'SACSS',
