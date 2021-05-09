@@ -1,0 +1,14 @@
+/* stylelint-disable docusaurus/copyright-header */
+
+/**
+ * CSS files with the .module.css suffix will be treated as CSS modules
+ * and scoped locally.
+ */
+
+.box{
+  font-size: 18px;
+}
+.box h2{
+  font-size: 4em;
+  font-weight: 800;
+}
