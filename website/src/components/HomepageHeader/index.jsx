@@ -5,6 +5,7 @@ import styles from "./index.module.css";
 import Main from "./Main";
 import Demo from "./Demo";
 import Button from "../Button";
+import Translate from '@docusaurus/Translate';
 // import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
 function HomepageHeader() {
@@ -16,8 +17,8 @@ function HomepageHeader() {
         <div className="col col--5 mb16"><Demo /></div>
       </div>
       <div className="tac mt16 mb16">
-        <Button Component={DLink} to="/blog">
-          Get Start
+        <Button Component={DLink} to="https://github.com/ziven27/sacss">
+          <Translate description="开始按钮">GitHub</Translate>
         </Button>
       </div>
     </header>

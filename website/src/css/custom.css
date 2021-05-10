@@ -23,6 +23,9 @@
   margin: 0 calc(-1 * var(--ifm-pre-padding));
   padding: 0 var(--ifm-pre-padding);
 }
+.row{
+  width: 100%;
+}
 
 dl, dt, dd, h2, p {
   padding: 0;
@@ -55,6 +58,10 @@ dl, dt, dd, h2, p {
 
 .mb16 {
   margin-bottom: 16px;
+}
+
+.mb24 {
+  margin-bottom: 24px;
 }
 
 .br8 {

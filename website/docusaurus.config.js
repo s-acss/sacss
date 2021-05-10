@@ -2,15 +2,15 @@
 module.exports = {
   title: 'SACSS',
   tagline: 'Dinosaurs are cool',
-  url: 'https://your-docusaurus-test-site.com',
-  baseUrl: '/',
+  url: 'https://ziven27.github.io',
+  baseUrl: '/sacss/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
   organizationName: 'ziven27', // Usually your GitHub org/user name.
   projectName: 'sacss', // Usually your repo name.
   i18n: {
-    defaultLocale: 'en',
+    defaultLocale: 'zh-cn',
     locales: ['en', 'zh-cn'],
     localeConfigs: {
       en: {
@@ -29,26 +29,26 @@ module.exports = {
         src: 'img/logo.svg',
       },
       items: [
-        {
-          type: 'doc',
-          docId: 'intro',
-          position: 'left',
-          label: 'Docs',
-        },
-        {
-          to: '/blog',
-          label: 'Blog',
-          position: 'right'
-        },
+        // {
+        //   type: 'doc',
+        //   docId: 'intro',
+        //   position: 'left',
+        //   label: 'Docs',
+        // },
+        // {
+        //   to: '/blog',
+        //   label: 'Blog',
+        //   position: 'right'
+        // },
         {
           type: 'localeDropdown',
           position: 'right',
         },
-        {
-          href: 'https://github.com/ziven27/sacss',
-          label: 'GitHub',
-          position: 'right',
-        },
+        // {
+        //   href: 'https://github.com/ziven27/sacss',
+        //   label: 'GitHub',
+        //   position: 'right',
+        // },
       ],
     },
     footer: {
