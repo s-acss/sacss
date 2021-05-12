@@ -2,6 +2,7 @@ import React from 'react';
 import clsx from "clsx";
 import styles from "./index.module.css";
 import Pre from "../../Pre";
+import srcImg from '@site/static/img/logo.svg';
 
 const code = `<div class="bc_fff pt16 pb16 pl16 pr16 dif br8">
   <img class="mr8 w48 h48" src="./logo.svg"/>
@@ -16,7 +17,7 @@ function Demo({className}) {
     <div className={clsx(className, styles.box, 'oh pr')}>
       <div className="bc_000 pt16 pb16 pl16 pr16 df aic jcc">
         <div className="bc_fff pt16 pb16 pl16 pr16 dif br8">
-          <img className="mr8 w48 h48" src="../../../../static/img/logo.svg"/>
+          <img className="mr8 w48 h48" src={srcImg}/>
           <dl className="f1 fs14 c_000">
             <dt className="fw700 fs16">SACSS</dt>
             <dd>Static Atomic CSS</dd>
