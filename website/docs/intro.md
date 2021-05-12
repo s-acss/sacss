@@ -2,34 +2,20 @@
 sidebar_position: 1
 ---
 
-# Tutorial Intro
+# 简介
 
-Let's discover **Docusaurus in less than 5 minutes**.
+静态的 Atomic CSS，是一套具有严格命名规则的 CSS 解决方案，目标是希望让你只需要在 HTML 中就可以快速实现设计原型，而不需要在 HTML 和 CSS 之间来回切换。
 
-## Getting Started
+这和 [tailwindcss](https://tailwindcss.com/) 要解决的问题是一样的，但不同的是以 [Atomic css](https://acss.io/) 的方式。
 
-Get started by **creating a new site**.
+[![npm package][npm-badge]][npm-url] 
+[![jsdelivr][jsdelivr-badge]][jsdelivr-url]
+[![github][git-badge]][git-url] 
 
-Or **try Docusaurus immediately** with **[new.docusaurus.io](https://new.docusaurus.io)**.
-
-## Generate a new site
-
-Generate a new Docusaurus site using the **classic template**:
-
-```shell
-npx @docusaurus/init@latest init my-website classic
-```
-
-## Start your site
-
-Run the development server:
-
-```shell
-cd my-website
-
-npx docusaurus start
-```
-
-Your site starts at `http://localhost:3000`.
-
-Open `docs/intro.md` and edit some lines: the site **reloads automatically** and display your changes.
+[npm-badge]: https://img.shields.io/npm/v/sacss.svg
+[npm-url]: https://www.npmjs.org/package/sacss
+[npm-downloads]: https://img.shields.io/npm/dw/sacss
+[git-url]: https://github.com/ziven27/SACSS
+[git-badge]: https://img.shields.io/github/stars/ziven27/SACSS.svg?style=social
+[jsdelivr-badge]: https://data.jsdelivr.com/v1/package/npm/sacss/badge
+[jsdelivr-url]: https://www.jsdelivr.com/package/npm/sacss
