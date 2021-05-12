@@ -18,7 +18,7 @@ function HomepageHeader() {
       </div>
       <div className="tac mt16 mb16">
         <Button Component={DLink} to="https://github.com/ziven27/sacss">
-          <Translate description="开始按钮">GitHub</Translate>
+          <Translate id="start.button" description="开始按钮">GitHub</Translate>
         </Button>
       </div>
     </header>
