@@ -22,6 +22,7 @@ module.exports = {
     },
   },
   themeConfig: {
+    sidebarCollapsible: false,
     navbar: {
       title: 'SACSS',
       logo: {
