@@ -54,7 +54,7 @@ $ npm i sacss;
 
 ## use
 
-![img](./img/thumb.png)
+![img](website/static/img/thumb.png)
 
 ```less
 // less
@@ -89,7 +89,7 @@ $ npm i sacss;
 ```
 
 
-![img](./img/tailwindcss.jpg)
+![img](website/static/img/tailwindcss.jpg)
 
 This demo is copy from home page of [tailwindcss](https://tailwindcss.com/).
 
@@ -126,7 +126,7 @@ SASS and LESS got the same name mixin.
 7: `SACSS`: create SACSS in short hand;
 8: `_SACSS`: mixin of all css style in `index.css`, you can use this to add prefix for each rules;
 
-![img](./img/demo.png)
+![img](website/static/img/demo.png)
 
 
 ``` less

@@ -54,7 +54,7 @@ $ npm i sacss;
 
 ## 使用
 
-![img](../img/thumb.png)
+![img](../website/static/img/thumb.png)
 
 ```less
 // less
@@ -89,7 +89,7 @@ $ npm i sacss;
 ```
 
 
-![img](../img/tailwindcss.jpg)
+![img](../website/static/img/tailwindcss.jpg)
 
 这个示例图片是仿照 [tailwindcss](https://tailwindcss.com/) 官网做的，可以很明显的看到，实现相同的效果我们用了更少的代码。
 
@@ -125,7 +125,7 @@ SASS 和 LESS 拥有完全相同的 mixin.
 7: `SACSS`: 辅助你快速创建 SACSS;
 8: `_SACSS`: 执行这个方法会输出全部的 `index.css` 文件中的代码，目的是方便你为所有样式添加统一前缀（默认不加）;
 
-![img](../img/demo.png)
+![img](../website/static/img/demo.png)
 
 
 ``` less
