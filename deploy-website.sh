@@ -1,8 +1,11 @@
+# deploy website
 set -e
 
 git add .
 git commit -m 'docs: update code'
 git push -f
+
+cd website
 
 yarn build
 
