@@ -18,7 +18,7 @@ SACSS 目标在于帮助你更**快**更**简单**的创建属于自己项目的
 
 **Utility First CSS** 能够明显的提升 CSS 编写效率，以及最大限度的控制 CSS 代码膨胀率。
 
-我们也经常会在 CSS **最佳实践** 的文章中看到这个概念。 
+我们经常会在 CSS **最佳实践** 的文章中看到这个概念。 
 
 基于这个理论的 CSS 方案有很多，最有名的是 [Tailwind CSS](https://tailwindcss.com/) 它是目前所有 CSS 解决方案中 ![github](https://img.shields.io/github/stars/tailwindlabs/tailwindcss.svg?style=social) 数最高的类库。
 
@@ -40,13 +40,13 @@ Tailwind CSS 类库提供了非常全的 CSS 类名方便我们专注在 HTML �
 
 而在 SACSS 中 `命名规则公式('text-align:center;') => .tac`，而这个公式基础规则是只取首字母。
 
-也就是说你看到 style 属性，你就知道与之对应的 class 名是什么，完全不用记忆，这个模式会大大的增加**开发体验**。
+也就是说你看到 style 属性，你就知道与之对应的 class 名是什么，完全不用记忆这个模式会大大的增加**开发体验**。
 
 并且基于这个**命名规则公式**，团队内的小伙伴都能自由的维护只属于你们自己项目的 **Utility First CSS** 类库。
 
 ## 设计工具
 
-[Figma token to code](https://www.figma.com/community/plugin/759651077059504375/Token--%3E-Code) 这个插件能自动帮你从 Figma 设计稿中，获取 SACSS 代码。
+[Figma token to code](https://www.figma.com/community/plugin/759651077059504375/Token--%3E-Code) 这个插件能自动帮你从 Figma 设计稿中，直接获取 SACSS 代码。
 
 进一步提升你的开发体验。
 
