@@ -8,10 +8,6 @@ import 'sacss/index.css';
 export default function Home() {
   return (
     <Layout
-      title={translate({
-        message: '首页',
-        description: '页面顶部标题'
-      })}
       description={
         translate({
           message: '描述',

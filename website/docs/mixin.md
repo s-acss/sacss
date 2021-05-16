@@ -7,10 +7,10 @@ SASS 和 LESS 拥有完全相同的 mixin.
 2. `Ellipsis`: 单行文本超出显示`...`；
 3. `Ellipsis-multiple`: 多行文本超出显示 `...`;
 4. `Cell`: 在浮动布局中撑满剩余空间;
-5. `Margins`: 同时创建四个方向的外间距 `margin-top` `margin-right` `margin-bottom` `margin-left`;
-6: `Paddings`: 同时创建四个方向的内间距 `padding-top` `padding-right` `padding-bottom` `padding-left`;
-7: `SACSS`: 辅助你快速创建 SACSS;
-8: `_SACSS`: 执行这个方法会输出全部的 `index.css` 文件中的代码，目的是方便你为所有样式添加统一前缀（默认不加）;
+5. `Margins`: 同时创建四个方向的外间距 `margin-top` `margin-right` `margin-bottom` `margin-left` ;
+6. `Paddings`: 同时创建四个方向的内间距 `padding-top` `padding-right` `padding-bottom` `padding-left` ;
+7. `SACSS`: 辅助你快速创建 SACSS;
+8. `_SACSS`: 执行这个方法会输出全部的 `index.css` 文件中的代码，目的是方便你为所有样式添加统一前缀（默认不加）;
 
 ![img](/img/demo.png)
 

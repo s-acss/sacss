@@ -45,11 +45,16 @@ module.exports = {
           type: 'localeDropdown',
           position: 'right',
         },
-        // {
-        //   href: 'https://github.com/ziven27/sacss',
-        //   label: 'GitHub',
-        //   position: 'right',
-        // },
+        {
+          href: 'https://www.npmjs.com/package/sacss',
+          label: 'NPM',
+          position: 'right',
+        },
+        {
+          href: 'https://github.com/ziven27/sacss',
+          label: 'GitHub',
+          position: 'right',
+        },
       ],
     },
     footer: {

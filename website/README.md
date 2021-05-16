@@ -15,6 +15,10 @@ yarn start
 yarn start -- --locale en
 ```
 
+## Deploy
+
+在根目录 `sacss` 运行 `sh ./deploy-website.sh`
+
 ## Translate 
 
 ```console
