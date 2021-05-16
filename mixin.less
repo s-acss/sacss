@@ -1,0 +1,90 @@
+@charset "utf-8";
+@import "./mixin/SACSS.less";
+/**
+ * #SACSS(font-size; fs; 12, 16; 1px);
+ * @prop: 属性名
+ * @name: 缩写名
+ * @list: 值列表
+ * @unit: 单位换算表达式, 默认为1px, 想要 rem 填写 1/16*1rem
+ */
+#SACSS(@prop; @name; @list; @unit) when not(@list = false) {
+  .loop(@i) when (@i < length(@list) + 1) {
+    @item: extract(@list, @i);
+    .@{name}@{item} {
+      @{prop}: @item * @unit;
+    }
+    .loop(@i+1);
+  }
+
+  .loop(1);
+}
+
+/**
+ * #SACSS(font-weight; fw; 400, 700);
+ * @prop: 属性名
+ * @name: 缩写名
+ * @list: 值列表
+ */
+#SACSS(@prop; @name; @list;) when not(@list =false) {
+  .loop(@i) when (@i < length(@list) + 1) {
+    @item: extract(@list, @i);
+    .@{name}@{item} {
+      @{prop}: @item;
+    }
+    .loop(@i+1);
+  }
+
+  .loop(1);
+}
+
+/**
+ * #Margins(8, 16; 1px);
+ * @list: 值列表
+ * @unit: 单位换算表达式, 默认为1px, 想要 rem 填写 1/16*1rem
+ */
+#Margins(@list:false; @unit) {
+  #SACSS(@prop: margin-top; @name: mt; @list; @unit);
+  #SACSS(@prop: margin-right; @name: mr; @list; @unit);
+  #SACSS(@prop: margin-bottom; @name: mb; @list; @unit);
+  #SACSS(@prop: margin-left; @name: ml; @list; @unit);
+}
+
+/**
+ * #Paddings(8, 16; 1px);
+ * @list: 值列表
+ * @unit: 单位换算表达式, 默认为1px, 想要 rem 填写 1/16*1rem
+ */
+#Paddings(@list:false; @unit) {
+  #SACSS(@prop: padding-top; @name: pt; @list; @unit);
+  #SACSS(@prop: padding-right; @name: pr; @list; @unit);
+  #SACSS(@prop: padding-bottom; @name: pb; @list; @unit);
+  #SACSS(@prop: padding-left; @name: pl; @list; @unit);
+}
+
+/*
+* 以下属性因为太常用所有放在了这里
+* 这里的命名并没有严格按照上面的规则
+*/
+
+/* 清除浮动 */
+#Clearfix(){
+  &:after{
+    display: table; content: ''; clear: both;
+  }
+}
+
+/* 文字超出一行点点点 */
+#Ellipsis(){
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+
+/* 多行文本点点点 */
+
+#Ellipsis-multiple(){
+  display: -webkit-box; overflow: hidden; word-wrap: break-word; -webkit-box-orient: vertical;
+}
+
+/* 用表格的方式撑满浮动之后的剩余空间 */
+#Cell(){
+  display: table-cell; *display: inline-block; width: 2000px; *width: auto;
+}

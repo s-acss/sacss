@@ -1,0 +1,23 @@
+@import '../mixin';
+@import "../mixin/SACSS.scss";
+
+//$prefix:'sacss_';
+//@include _SACSS($prefix);
+
+@include Margins( (8, 16), 1px); // .mt8, .mr8, .mb8, .ml8, .mt16, .mr16, .mb16, .ml16;
+@include Paddings((8, 16), 1px); // .pt8, .pr8, .pb8, .pl8, .pt16, .pr16, .pb16, .pl16;
+@include SACSS(font-size, fs, (12, 16), 1px); // .fs12, .fs16
+@include SACSS(line-height, lh, (8, 16), 1px); // .lh16, .lh24
+
+.clearfix {
+  @include Clearfix;
+}
+.ell {
+  @include Ellipsis;
+}
+.ells {
+  @include Ellipsis-multiple;
+}
+.cell {
+  @include Cell;
+}
