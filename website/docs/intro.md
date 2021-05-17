@@ -18,8 +18,6 @@ SACSS 目标在于帮助你更**快**更**简单**的创建属于自己项目的
 
 **Utility First CSS** 能够明显的提升 CSS 编写效率，以及最大限度的控制 CSS 代码膨胀率。
 
-我们经常会在 CSS **最佳实践** 的文章中看到这个概念。 
-
 基于这个理论的 CSS 方案有很多，最有名的是 [Tailwind CSS](https://tailwindcss.com/) 它是目前所有 CSS 解决方案中 ![github](https://img.shields.io/github/stars/tailwindlabs/tailwindcss.svg?style=social) 数最高的类库。
 
 ## Why not Tailwind CSS? 
@@ -36,11 +34,11 @@ Tailwind CSS 类库提供了非常全的 CSS 类名方便我们专注在 HTML �
 
 比如想要实现文本居中对齐 `text-align:center;` 这个效果。
 
-在 Tailwind CSS 中我们必须要记住与之对应的 Class Name 是 `.text-center` 才能实现样式。
+在 Tailwind CSS 中我们必须要记住与之对应的 Class Name 是 `.text-center` 。
 
-而在 SACSS 中 `命名规则公式('text-align:center;') => .tac`，而这个公式基础规则是只取首字母。
+在 SACSS 中 `命名规则公式('text-align:center;') => .tac`，而这个公式基础规则是只取首字母。
 
-也就是说你看到 style 属性，你就知道与之对应的 class 名是什么，完全不用记忆这个模式会大大的增加**开发体验**。
+也就是说你看到 style 属性，你就知道与之对应的 class 名是什么，完全不用记忆，这个模式会大大的增加**开发体验**。
 
 并且基于这个**命名规则公式**，团队内的小伙伴都能自由的维护只属于你们自己项目的 **Utility First CSS** 类库。
 
@@ -55,21 +53,33 @@ Tailwind CSS 类库提供了非常全的 CSS 类名方便我们专注在 HTML �
 ![img](/img/thumb.png)
 
 ```less
-// less 文件
-@import 'sacss/index.css';
+// less
+@import 'sacss';
 @import 'sacss/mixin.less';
 
-// 自定义样式（基于命名规则）
 #Margins(8, 16; 1px);                // .mt8, .mr8, .mb8, .ml8, .mt16, .mr16, .mb16, .ml16;
 #Paddings(16, 24; 1px);              // .pt16, .pr16, .pb16, .pl16, .pt24, .pr24, .pb24, .pl24;
 #SACSS(font-size; fs; 16, 18; 1px);   // .fs16, .fs18;
 #SACSS(line-height; lh; 24, 28; 1px); // .lh24, .lh28;
 #SACSS(font-weight; fw; 500, 700);    // .fw500, fw700;
 
-// 自定义颜色（基于命名规则）
 .c_m{ color: #000; }
 .c_s{ color: #71717a; }
 .c_info{ color:#0891b2; }
+```
+
+```html
+<figure class="bc_fff tac pt24 pb24 pl24 pr24">
+    <img class="w128 h128 br100% db mla mra mb24" src="./avatar.jpg" alt="avatar" width="128" height="128" />
+    <blockquote class="mb16 fs18 fw700 lh28 c_m">
+      <p class="mb8">“Tailwind CSS is the only framework that I've seen scale on large teams.</p>
+      <p>It’s easy to customize, adapts to any design, and the build size is tiny.”</p>
+    </blockquote>
+    <figcaption class="fs16 lh24">
+      <em class="db c_info fsn fw500">Sarah Dayan</em>
+      <strong class="db c_s fw500">Staff Engineer, Algolia</strong>
+    </figcaption>
+</figure>
 ```
 
 ![img](/img/tailwindcss.jpg)
