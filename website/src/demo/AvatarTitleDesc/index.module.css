@@ -5,6 +5,7 @@
  * and scoped locally.
  */
 
-.box {
-  padding-top: 32px;
+.box{
+  background-color: #57b8e4;
+  max-width: 480px;
 }

@@ -15,11 +15,8 @@ function Main({className}) {
         <Translate
           id="slogan.sub"
           description="slogan subtitle"
-          values={{
-            'strong': (<strong><Translate>命名</Translate></strong>)
-          }}
         >
-          {'{strong}是 CSS 中最难的问题没有之一!'}
+          {'适合的才是最好的！'}
         </Translate>
       </p>
     </div>

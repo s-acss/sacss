@@ -2,7 +2,7 @@ import React from 'react';
 import clsx from "clsx";
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import styles from "./index.module.css";
-import Pre from "../../Pre";
+import Pre from "../Pre";
 
 const code = `<div class="bc_fff pt16 pb16 pl16 pr16 dif br8">
   <img class="mr8 w48 h48" src="./logo.svg"/>

@@ -23,7 +23,8 @@
   margin: 0 calc(-1 * var(--ifm-pre-padding));
   padding: 0 var(--ifm-pre-padding);
 }
-.row{
+
+.row {
   width: 100%;
 }
 
@@ -36,12 +37,32 @@ dl, dt, dd, h2, p {
   padding-top: 16px;
 }
 
+.pt24 {
+  padding-top: 24px;
+}
+
+.pb24 {
+  padding-bottom: 24px;
+}
+
+.pl24 {
+  padding-left: 24px;
+}
+
+.pr24 {
+  padding-right: 24px;
+}
+
 .pr16 {
   padding-right: 16px;
 }
 
 .pb16 {
   padding-bottom: 16px;
+}
+
+.pt32 {
+  padding-top: 32px;
 }
 
 .pl16 {
@@ -84,5 +105,18 @@ dl, dt, dd, h2, p {
   height: 48px;
 }
 
+.br8 {
+  border-radius: 8px;
+}
 
+.c_m {
+  color: #000;
+}
 
+.c_s {
+  color: #71717a;
+}
+
+.c_info {
+  color: #0891b2;
+}
