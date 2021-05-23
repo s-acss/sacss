@@ -42,8 +42,8 @@ const demoScss = function() {
 
 const watchFile = function() {
   // less/demo.less 有引用 css/core.css 文件，所以需要监听
-  watch('./_minxin.less', demoLess);
-  watch('./_mixin.scss', demoScss);
+  watch('./less/*.less', demoLess);
+  watch('./sass/*.scss', demoScss);
   watch('./src/index.scss', series(core, demoScss, demoLess));
 
   // demo

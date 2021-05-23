@@ -1,0 +1,27 @@
+/*
+* 以下属性因为太常用所有放在了这里
+* 这里的命名并没有严格按照上面的规则
+*/
+
+/* 清除浮动 */
+@mixin Clearfix(){
+  &:after{
+    display: table; content: ''; clear: both;
+  }
+}
+
+/* 文字超出一行点点点 */
+@mixin Ellipsis(){
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+
+/* 多行文本点点点 */
+
+@mixin Ellipsis-multiple(){
+  display: -webkit-box; overflow: hidden; word-wrap: break-word; -webkit-box-orient: vertical;
+}
+
+/* 用表格的方式撑满浮动之后的剩余空间 */
+@mixin Cell(){
+  display: table-cell; *display: inline-block; width: 2000px; *width: auto;
+}

@@ -16,8 +16,8 @@
   "files": [
     "demo",
     "index.css",
-    "mixin.less",
-    "mixin.scss",
+    "less/SACSS.less",
+    "sass/SACSS.scss",
     "mixin",
     "lang"
   ],

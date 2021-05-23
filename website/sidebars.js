@@ -16,9 +16,10 @@ module.exports = {
   sideBar: {
     "Introduction": ['about'],
     "Use": [
-      'use',
-      'name',
-      'mixin'
+      'core',
+      'custom',
+      'scope',
+      'helpers'
     ]
   }
 };

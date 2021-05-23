@@ -1,0 +1,36 @@
+@charset "utf-8";
+/**
+ * #SACSS(font-size; fs; 12, 16; 1px);
+ * @prop: 属性名
+ * @name: 缩写名
+ * @list: 值列表
+ * @unit: 单位换算表达式, 默认为1px, 想要 rem 填写 1/16*1rem
+ */
+#SACSS(@prop; @name; @list; @unit) when not(@list = false) {
+  .loop(@i) when (@i < length(@list) + 1) {
+    @item: extract(@list, @i);
+    .@{name}@{item} {
+      @{prop}: @item * @unit;
+    }
+    .loop(@i+1);
+  }
+
+  .loop(1);
+}
+
+/**
+ * #SACSS(font-weight; fw; 400, 700);
+ * @prop: 属性名
+ * @name: 缩写名
+ * @list: 值列表
+ */
+#SACSS(@prop; @name; @list;) when not(@list =false) {
+  .loop(@i) when (@i < length(@list) + 1) {
+    @item: extract(@list, @i);
+    .@{name}@{item} {
+      @{prop}: @item;
+    }
+    .loop(@i+1);
+  }
+  .loop(1);
+}

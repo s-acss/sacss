@@ -4,8 +4,3 @@
  * CSS files with the .module.css suffix will be treated as CSS modules
  * and scoped locally.
  */
-
-.box{
-  background-color: #57b8e4;
-  max-width: 480px;
-}

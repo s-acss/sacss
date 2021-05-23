@@ -1,26 +1,56 @@
-@import '../mixin.less';
+@import '../less/SACSS.less';
+@import "../less/helpers";
 
-//$prefix:'sacss_';
-//#_SACSS($prefix);
+@import '../less/WidthPrefix';
 
-#Margins(8, 16, 24; 1px); // .mt8, .mr8, .mb8, .ml8, .mt16, .mr16, .mb16, .ml16;
-#Paddings(8, 16, 24; 1px); // .pt8, .pr8, .pb8, .pl8, .pt16, .pr16, .pb16, .pl16;
+@prefix: '_';
+
+#WidthPrefix(@prefix);
+// margin
+#SACSS(margin-top; mt; 8, 16; 1px); // .mt8, .mt16
+#SACSS(margin-right; mr; 8, 16; 1px); // .mr8, .mr16
+#SACSS(margin-bottom; mb; 8, 16; 1px); // .mb8, .mb16
+#SACSS(margin-left; ml; 8, 16; 1px); // .ml8, .ml16
+
+// padding
+#SACSS(padding-top; pt; 8, 16; 1px); // .pt8, .pt16
+#SACSS(padding-right; pr; 8, 16; 1px); // .pr8, .pr16
+#SACSS(padding-bottom; pb; 8, 16; 1px); // .pb8, .pb16
+#SACSS(padding-left; pl; 8, 16; 1px); // .pl8, .pl16
+
 #SACSS(font-size; fs; 12, 16; 1px); // .fs12, .fs16;
-#SACSS(line-height; lh; 16, 20, 24; 1px); // .lh16, .lh20;
+#SACSS(line-height; lh; 16, 24; 1px); // .lh16, .lh24;
 
-.clearfix{ #Clearfix;  }
-.ellipsis{ #Ellipsis;  }
-.cell{ #Cell; }
-.ellipsis-mul{ #Ellipsis-multiple;  }
-.ellipsis-mul._2row{ -webkit-line-clamp: 2; }
+// helpers
+.clearfix {
+  #Clearfix;
+}
 
-.c_m{ color: #000; }
-.c_s{ color: #71717a; }
-.c_info{ color:#0891b2; }
+.ellipsis {
+  #Ellipsis;
+}
 
+.cell {
+  #Cell;
+}
 
-// css reset for demo
-figure, blockquote, p,body{
-  margin: 0;
-  padding: 0;
+.ellipsis-mul {
+  #Ellipsis-multiple;
+}
+
+.ellipsis-mul._2row {
+  -webkit-line-clamp: 2;
+}
+
+// Color
+.c_m {
+  color: #000;
+}
+
+.c_s {
+  color: #71717a;
+}
+
+.c_info {
+  color: #0891b2;
 }

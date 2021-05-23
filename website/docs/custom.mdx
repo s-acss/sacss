@@ -1,0 +1,195 @@
+# 定制 Token
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+核心代码 `sacss/index.css` 里面存放的基本都是**布局**相关的代码。
+
+颜色仅有以下四个，甚至连非常常用的 `font-size` 相关的代码都不包含。
+
+```css
+.bc_fff{background-color:#fff}
+.bc_000{background-color:#000}
+.c_000{color:#000}
+.c_fff{color:#fff}
+```
+
+原因在于这些和**设计规范**相关的代码需要**定制**。
+
+## 设计规范
+
+- A 项目设计规范：所有间距，字号都必须是 4 的倍数；
+- B 项目设计规范：所有间距，字号都必须是 5 的倍数;
+
+不同的设计师对于不同的项目，拥有着不同的**设计规范**。
+
+
+<Tabs
+  defaultValue="a"
+  values={[
+    { label: 'A 项目', value: 'a', },
+    { label: 'B 项目', value: 'b', }
+  ]
+  }
+>
+<TabItem value="a">
+
+```css
+/* 所有间距，字号都必须是 4 的倍数； */
+.mb8{ margin-bottom:8px; }
+.mb16{ margin-bottom:16px; }
+.mb24{ margin-bottom:24px; }
+.fs12{ font-size:12px;}
+.fs16{ font-size:16px;}
+.fs20{ font-size:20px;}
+.lh16{ line-height:16px;}
+.lh24{ line-height:24px;}
+.lh28{ line-height:28px;}
+/* ... */
+```
+
+</TabItem>
+<TabItem value="b">
+
+```css
+/* 所有间距，字号都必须是 5 的倍数； */
+.mb10{ margin-bottom:10px; }
+.mb15{ margin-bottom:15px; }
+.mb20{ margin-bottom:20px; }
+.fs15{ font-size:15px;}
+.fs20{ font-size:20px;}
+.fs25{ font-size:25px;}
+.lh20{ line-height:20px;}
+.lh25{ line-height:25px;}
+.lh30{ line-height:30px;}
+/* ... */
+```
+
+</TabItem>
+</Tabs>
+
+我们在为这些 **设计规范** 创建 SCSS 代码的时候，可以使用 `SACSS` 这 Mixin 快速创建相关的代码。
+
+<Tabs
+  defaultValue="lessA"
+  values={[
+    { label: 'A 项目 LESS', value: 'lessA', },
+    { label: 'A 项目 SASS ', value: 'sassA', },
+    { label: 'B 项目 LESS', value: 'lessB', },
+    { label: 'B 项目 SASS', value: 'sassB', }
+  ]
+  }
+>
+<TabItem value="lessA">
+
+```less
+/* 所有间距，字号都必须是 4 的倍数； */
+@import 'sacss/less/SACSS.less';
+
+#SACSS(margin-bottom; mb; 8, 16, 24; 1px);
+#SACSS(font-size; fs; 12, 16, 20; 1px);
+#SACSS(line-height; lh; 16, 24, 28; 1px);
+/* ... */
+```
+
+</TabItem>
+<TabItem value="sassA">
+
+```css
+/* 所有间距，字号都必须是 4 的倍数； */
+@import 'sacss/sass/SACSS.scss';
+
+@include SACSS(margin-bottom, mt, (8, 16, 24), 1px);
+@include SACSS(font-size, fs, (12, 16, 20), 1px);
+@include SACSS(line-height, lh, (12, 16, 20), 1px);
+/* ... */
+```
+
+</TabItem>
+
+<TabItem value="lessB">
+
+```less
+/* 所有间距，字号都必须是 5 的倍数； */
+@import 'sacss/less/SACSS.less';
+
+#SACSS(margin-bottom; mb; 10, 15, 20; 1px);
+#SACSS(font-size; fs; 15, 20, 25; 1px);
+#SACSS(line-height; lh; 20, 25, 30; 1px);
+/* ... */
+```
+
+</TabItem>
+<TabItem value="sassB">
+
+```css
+/* 所有间距，字号都必须是 5 的倍数； */
+@import 'sacss/sass/SACSS.scss';
+
+@include SACSS(margin-bottom, mt, (10, 15, 20), 1px);
+@include SACSS(font-size, fs, (15, 20, 25), 1px);
+@include SACSS(line-height, lh, (20, 25, 30), 1px);
+/* ... */
+```
+
+</TabItem>
+</Tabs>
+
+这里的 Mixin，生成的代码和上面对应的 CSS 一摸一样。
+
+## SACSS API
+
+<Tabs
+  defaultValue="lessApi"
+  values={[
+    { label: 'LESS', value: 'lessApi', },
+    { label: 'SASS', value: 'sassApi', }
+  ]
+  }
+>
+<TabItem value="lessApi">
+
+```css
+@import 'sacss/less/SACSS.less';
+
+#SACSS('属性名'; '缩写名'; '值列表'; '单位');
+
+// 属性名: 直接写属性名称 `font-size` (不要带引号)
+// 缩写名: 缩写名称 `fs` (不要带引号)
+// 值列表: 对应的值列表 `8, 16, 24`（逗号分隔）
+// 单位：默认 `1px`, 如果需要 基于 rem 请写表达式 `1/16*1rem`
+```
+
+</TabItem>
+<TabItem value="sassApi">
+
+```css
+@import 'sacss/sass/SACSS.scss';
+
+@include SACSS('属性名', '缩写名', ('值列表'), '单位');
+
+// 属性名: 直接写属性名称 `font-size` (不要带引号)
+// 缩写名: 缩写名称 `fs` (不要带引号)
+// 值列表: 对应的值列表 `8, 16, 24`（分号分隔）
+// 单位：默认 `1px`, 如果需要 基于 rem 请写表达式 `1/16*1rem`
+
+```
+</TabItem>
+</Tabs>
+
+对于如何缩写的命名，请[点击这里](./name)。
+
+> SACSS 只对数字类型的值生效。比如 `font-weight:bold;` 不能使用 SACSS 创建，而 `font-weight:400;` 可以。
+
+
+## 哪些需要定制
+
+- `margin`: 缩写 `m`
+- `padding`: 缩写 `p`
+- `font-size`: 缩写 `fs`
+- `line-height`: 缩写 `lh`
+- `color`: 缩写 `c_`
+- `background-color`: 缩写 `bc_`
+
+
+

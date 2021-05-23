@@ -120,3 +120,11 @@ dl, dt, dd, h2, p {
 .c_info {
   color: #0891b2;
 }
+
+.mw480{
+  max-width: 480px;
+}
+
+.bc_info{
+  background-color: #57b8e4;
+}
