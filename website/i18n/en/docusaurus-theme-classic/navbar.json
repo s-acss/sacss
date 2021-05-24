@@ -6,5 +6,13 @@
   "item.label.Docs": {
     "message": "Docs",
     "description": "Navbar item with label Docs"
+  },
+  "item.label.NPM": {
+    "message": "NPM",
+    "description": "Navbar item with label NPM"
+  },
+  "item.label.GitHub": {
+    "message": "GitHub",
+    "description": "Navbar item with label GitHub"
   }
 }

@@ -1,5 +1,4 @@
-
-# 核心代码
+# Core
 
 [![npm package][npm-badge]][npm-url]
 [![jsdelivr][jsdelivr-badge]][jsdelivr-url]
@@ -13,33 +12,33 @@
 [jsdelivr-badge]: https://data.jsdelivr.com/v1/package/npm/sacss/badge
 [jsdelivr-url]: https://www.jsdelivr.com/package/npm/sacss
 
-## 安装
+## Installation
 
 ```bash
 $ npm i sacss
 
-# 推荐使用👇
+# Recommended 👇
 $ yarn add sacss
 ```
 
-## 目录结构
+## Tree
 
 ```bash
 .
-├── less                   # 存放 LESS Mixin 的文件夹
-│   ├── SACSS.less         # 帮助创建 sacss 的辅助 LESS Mixin
-│   ├── WidthPrefix.less   # 为核心代码添加自定义前缀
-│   └── helpers.less       # 独立于 sacss 之外的常用辅助 Mixin
-├── sass                   # 存放 LESS Mixin 的文件夹
-│   ├── SACSS.scss         # 帮助创建 sacss 的辅助 SASS Mixin
-│   ├── WidthPrefix.scss   # 为核心代码添加自定义前缀
-│   └── helpers.scss       # 独立于 sacss 之外的常用辅助 mixin
-└── index.css              # 所有项目基本相同的核心代码（只推荐定制，命名前缀）;
+├── less                   # The folder where the LESS Mixin is stored
+│   ├── SACSS.less         # Helps to create the auxiliary LESS Mixin for SACSS
+│   ├── WidthPrefix.less   # Adding custom prefixes to core code
+│   └── helpers.less       # Common auxiliary mixin independent of SACSS
+├── sass                   # The folder where the LESS Mixin is stored
+│   ├── SACSS.scss         # Helps to create the auxiliary SASS Mixin for SACSS
+│   ├── WidthPrefix.scss   # Adding custom prefixes to core code
+│   └── helpers.scss       # Common auxiliary mixin independent of SACSS
+└── index.css              # Basically the same core code for all projects (only recommended for customization, naming prefixes);
 ```
 
-`less` 和 `sass` 拥有完全相同的文件和 API，只是语法不一样的实现而已。
+`less` and `sass` have exactly the same documentation and API, just a different implementation with a different syntax.
 
-## 核心文件
+## Core File
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -78,21 +77,21 @@ import TabItem from '@theme/TabItem';
 
 </Tabs>
 
-核心文件的使用非常的简单，只需要**全局**引入 `sacss/index.css` 文件即可。
+The core file is very simple to use, just **global** introduce the `sacss/index.css` file.
 
-`sacss/index.css` 包含了，大部分构建 UI **结构** 所需要的零件，比如：
+`sacss/index.css` contains, for the most part, the parts needed to build the UI **structure**, such as
 
-- `display` 布局
-- `float` 布局
-- `flex` 布局
-- `position` 布局
-- `font-weight` 100～900
+- `display` layout
+- `float` layout
+- `flex` layout
+- `position` layout
+- `font-weight` 100 to 900
 
-... 更多请查看源文件。
+... Please check the source file for more information.
 
-整体核心代码未压缩只有 `2kb`, 体积非常小所以请**全局**引入。
+The overall core code is only `2kb` uncompressed, very small size so please **global** introduce it.
 
-> ️注意：只能全局使用 SACSS，不要使用 CSS module 的方式引用
+> ️️Note: Only use SACSS globally, do not use the CSS module reference
 
 ## CDN
 
@@ -100,22 +99,22 @@ import TabItem from '@theme/TabItem';
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sacss/index.min.css" />
 ```
 
-如果你没有构建工具，也可以直接使用 jsdelivr CDN，或者直接下载这个 CDN 文件本地使用。
+If you don't have a build tool, you can also use the jsdelivr CDN directly, or just download this CDN file for local use.
 
-## 命名规则
+## Naming Rules
 
-1. 只取首字母: `.db{ display:block; }`;
-2. 有数字直接连接: `.mb10{ margin-bottom:10px; }`;
-3. 负值直接 `-` 连接: `.mb-10{ margin-bottom:-10px; }`;
-4. 特殊符号直接用 `\` 转义:  `.w100\%{ width:100%; } .lh1\.2{ line-height:1.2 }`;
-5. 其它或自定义样式，用 `_`分割 `.c_fff{ color:#fff; } .bc_fff{ background-color: #ffffff; }`
-6. hover 样式，用 `\:h`分割 `.fs12{ font-size:12px; } .fs12\:h:hover{ font-size:12px; }`
+1. with initials only: `.db{ display:block; }`;
+2. with numbers directly connected: `.mb10{ margin-bottom:10px; }`;
+3. with negative values directly connected with `-`: `.mb-10{ margin-bottom:-10px; }`;
+4. special symbols directly escaped with `\`: `.w100\%{ width:100%; } .lh1\.2{ line-height:1.2 }`;
+5. other or custom styles, split by `_` `.c_fff{ color:#fff; } .bc_fff{ background-color: #ffffff; }`
+6. hover style, split by `\:h` `.fs12{ font-size:12px; } .fs12\:h:hover{ font-size:12px; }`
 
-这套**命名规则**已经使用快接近 10 年了，是整个项目的**核心**。
+This set of **naming rules** has been in use for almost 10 years and is the **core** of the entire project.
 
-一套会让人**加速**，甚至是产生**愉悦**的**命名规则**。
+A set of **naming rules** that will **accelerate** and even **pleasure**.
 
-## 颜色命名
+## Color Naming
 
 ```css
 /* '.c_{custome name}{ color: value; }}' */
@@ -135,7 +134,7 @@ import TabItem from '@theme/TabItem';
 .c_dark { color: #343a40; }
 ```
 
-## 命名对比
+## Naming Comparison
 
 | Declarations         | SACSS     | ACSS       | Tailwind CSS      | Blowdrycss           | Basscss          | Tachyons   |
 | -------------------- | -------- | ----------- | ----------------- | -------------------- | ---------------- | ---------- |
@@ -146,4 +145,4 @@ import TabItem from '@theme/TabItem';
 | `width: 50%`         | `.w50%`  | `.W(50%)`   | `.w-1/2`          | `.width-50p`         | `.col-6`         | `.w-50`    |
 | `line-height: 1.5`   | `.lh1.5` | `.Lh(1.5)`  | `.leading-normal` | `.line-height-1_5`   | `.line-height-4` | `.lh-copy` |
 
-可以很明显地看到, SACSS 的命名规则，更加**简单**和**自然**。
+It is obvious that the naming convention of SACSS is more **simple** and **natural**.

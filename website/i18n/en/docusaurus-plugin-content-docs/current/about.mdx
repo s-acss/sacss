@@ -1,70 +1,112 @@
-
 # About
 
-[![npm package][npm-badge]][npm-url] 
-[![jsdelivr][jsdelivr-badge]][jsdelivr-url]
-[![github][git-badge]][git-url] 
+SACSS is attempt to help you create **Utility First CSS** class library for your project **faster** and **easier**.
 
-[npm-badge]: https://img.shields.io/npm/v/sacss.svg
-[npm-url]: https://www.npmjs.org/package/sacss
-[npm-downloads]: https://img.shields.io/npm/dw/sacss
-[git-url]: https://github.com/ziven27/SACSS
-[git-badge]: https://img.shields.io/github/stars/ziven27/SACSS.svg?style=social
-[jsdelivr-badge]: https://data.jsdelivr.com/v1/package/npm/sacss/badge
-[jsdelivr-url]: https://www.jsdelivr.com/package/npm/sacss
+## Why Utility First CSS?
 
-Rapidly build modern websites without ever leaving your HTML.
+> **Naming** is one of the most difficult problems in CSS
 
-A utility-first CSS framework with strict classes name rule that can be composed to build any design, directly in your markup.
+Content-based **semantic** naming enables you to create artwork.
 
-It attempts to solve the same problems as [tailwindcss](https://tailwindcss.com/) but in [Atomic css](https://acss.io/) way.
+However in a multi-person collaborative project, naming that you think is **semantic** can often be a nightmare to be around.
 
+**BEM** can normalize the way everyone on the team names things, yet everyone still needs to name things based on their own understanding.
 
-## Best Practice
+Among the popular CSS solutions, **Utility First CSS** solves this problem relatively effectively.
 
-SACSS does not cover all scenarios, The best practice is to dovetail design materials and CSS style layout. 
+This is because it already has a set of CSS class names for the UI that needs to be built.
 
+Ideally, we don't need to **create** any CSS Classes, we just need to **combine** (piece together multiple Classes) to complete the UI.
 
-[Figma token to code](https://www.figma.com/community/plugin/759651077059504375/Token--%3E-Code) This plugin can automatically help you to get the SACSS code from the Figma design.
+Since there is no naming, this naturally solves the core pain point of naming.
 
+Translated with www.DeepL.com/Translator (free version)
 
-## Demo
+```css
+/* semantic class */
+.h1{ font-size:16px; line-height:24px; font-weight:900; }
 
-![img](/img/thumb.png)
-
-```less
-// less
-@import 'sacss';
-@import 'sacss/mixin.less';
-
-#Margins(8, 16; 1px);                // .mt8, .mr8, .mb8, .ml8, .mt16, .mr16, .mb16, .ml16;
-#Paddings(16, 24; 1px);              // .pt16, .pr16, .pb16, .pl16, .pt24, .pr24, .pb24, .pl24;
-#SACSS(font-size; fs; 16, 18; 1px);   // .fs16, .fs18;
-#SACSS(line-height; lh; 24, 28; 1px); // .lh24, .lh28;
-#SACSS(font-weight; fw; 500, 700);    // .fw500, fw700;
+/* Utility First CSS */
+.fs12{ font-size: 16px; }
+.lh24{ line-height: 24px; }
+.fw900{ font-weight: 900; }
 ```
 
-```HTML
-<style>
-    .c_m{ color: #000; }
-    .c_s{ color: #71717a; }
-    .c_info{ color:#0891b2; }
-</style>
-
-<figure class="bc_fff tac pt24 pb24 pl24 pr24">
-    <img class="w128 h128 br100% db mla mra mb24" src="./avatar.jpg" alt="avatar" width="128" height="128" />
-    <blockquote class="mb16 fs18 fw700 lh28 c_m">
-      <p class="mb8">“Tailwind CSS is the only framework that I've seen scale on large teams.</p>
-      <p>It’s easy to customize, adapts to any design, and the build size is tiny.”</p>
-    </blockquote>
-    <figcaption class="fs16 lh24">
-      <em class="db c_info fsn fw500">Sarah Dayan</em>
-      <strong class="db c_s fw500">Staff Engineer, Algolia</strong>
-    </figcaption>
-</figure>
+```html
+<h1 class="h1">hello world</h1>
+<h1 class="fs16 lh24 fw900">hello world</h1>
 ```
 
+Of course **Utility First CSS** addresses the core pain point of naming. It also significantly improves CSS writing **efficiency** and maximizes control of CSS code **bulk**.
 
-![img](/img/tailwindcss.jpg)
+> The more single-functional the class, the higher the reuse rate
 
-This demo is copy from home page of [tailwindcss](https://tailwindcss.com/).
+## Why not Tailwind CSS?
+
+> Tailwind CSS is great, but it doesn't always fit.
+
+There are many CSS solutions based on **Utility First CSS**, the most famous one is  [Tailwind CSS](https://tailwindcss.com/)  which has the highest  ![github](https://img.shields.io/github/stars/tailwindlabs/tailwindcss.svg?style=social) count of any CSS solution.
+
+The Tailwind CSS library provides a very comprehensive set of CSS class names to allow us to quickly implement the UI by focusing on the HTML.
+
+However, because it is **big and comprehensive**, it is relatively expensive to **get started** and **remember**, and there is always a feeling of **killing a chicken with a bull**.
+
+## Try SACSS
+
+> SACSS: Static Atomic CSS
+
+SACSS is all about customizing your project's **Utility First CSS** code base based on your fellow designers' **design language**.
+
+Unlike Tailwind CSS, with SACSS you don't have to remember hundreds of CSS class names, instead there are just a few **Naming Rules**.
+
+For example, if you want to achieve the effect `text-align:center;` of centered text alignment.
+
+In Tailwind CSS we have to remember that the corresponding Class Name is `.text-center`.
+
+In SACSS `Naming Rule Formula ('text-align:center;') => .tac`, and the base rule for this formula is to take only **initial letters**.
+
+That is to say, you see the style attribute, you know what the corresponding class name is, no need to remember at all, this pattern will greatly increase the **development experience**.
+
+And based on this **Naming Rules Formula**, the team is free to maintain your own **Utility First CSS** class library for your project.
+
+> The SACSS core is in **Naming Rules**, so it is completely customizable to your own project.
+
+## Design Tools
+
+[Figma token to code](https://www.figma.com/community/plugin/759651077059504375/Token--%3E-Code) This plugin will automatically help you get the SACSS code directly from the Figma design.
+
+That is, you may not even need to remember this naming formula to further enhance the development experience.
+
+## Simple example
+
+import Demo from "@site/src/components/Demo";
+
+<Demo/>
+
+## Complex example
+
+import AvatarTitleDesc from "@site/src/demo/AvatarTitleDesc";
+
+<AvatarTitleDesc/>
+
+```html live
+<div className="bc_fff tac pt24 pb24 pl24 pr24 br8">
+  <img className="w128 h128 br100% db mla mra mb24" src="/img/avatar.jpg"
+       alt="avatar" width="128" height="128"/>
+  <div className="mb16 fs18 fw700 lh28 c_m">
+    <p className="mb8">Tailwind CSS is the only framework that I've seen scale on large teams.</p>
+    <p>It’s easy to customize, adapts to any design, and the build size is tiny.</p>
+  </div>
+  <div className="fs16 lh24">
+    <em className="db c_info fsn fw500">Sarah Dayan</em>
+    <strong className="db c_s fw500">Staff Engineer, Algolia</strong>
+  </div>
+</div>
+```
+
+## Inspiration
+
+- [Tailwind CSS](https://tailwindcss.com/)：The most popular **Utility First CSS** class library;
+- [Atomic CSS](https://acss.io/): Core philosophy (Yahoo!)；
+- [Fower](https://fower.vercel.app/)： An utility-first CSS in JS library for rapid UI development (Document Inspiration);
+- [Emmet](https://www.emmet.io/): The naming convention is inspired by Emmet, and many IDEs have this rule built in;

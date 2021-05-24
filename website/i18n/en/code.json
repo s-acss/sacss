@@ -21,7 +21,7 @@
   },
   "只需要专注在 HTML 就可以开发大部分网页样式": {
     "message": "Rapidly build modern websites without ever leaving your HTML",
-    "description": "Rapidly build modern websites without ever leaving your HTML"
+    "description": "Rapidly build modern websites without ever leaving your HTML."
   },
   "简单": {
     "message": "Easy",
@@ -224,6 +224,6 @@
   },
   "start.button": {
     "message": "Get Start",
-    "description": "开始按钮"
+    "description": "了解更多"
   }
 }

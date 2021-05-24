@@ -1,0 +1,194 @@
+# Custom Token
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+The core code `sacss/index.css` is basically all **layout** related code.
+
+There are only the following four colors, and even the very common `font-size` related code is not included.
+
+```css
+.bc_fff{background-color:#fff}
+.bc_000{background-color:#000}
+.c_000{color:#000}
+.c_fff{color:#fff}
+```
+
+The reason for this is that front-end code from **design specifications** related to the need for **customization**.
+
+## Design specifications
+
+- A project design specification: all spacing, font size must be a multiple of 4.
+- B project design specifications: all spacing, font size must be a multiple of 5;
+
+Different designers have different **design specifications** for different projects.
+
+
+<Tabs
+  defaultValue="a"
+  values={[
+    { label: 'Project A', value: 'a', },
+    { label: 'Project B', value: 'b', }
+  ]
+  }
+>
+<TabItem value="a">
+
+```css
+/* all spacing, font size must be a multiple of 4. */
+.mb8{ margin-bottom:8px; }
+.mb16{ margin-bottom:16px; }
+.mb24{ margin-bottom:24px; }
+.fs12{ font-size:12px;}
+.fs16{ font-size:16px;}
+.fs20{ font-size:20px;}
+.lh16{ line-height:16px;}
+.lh24{ line-height:24px;}
+.lh28{ line-height:28px;}
+/* ... */
+```
+
+</TabItem>
+<TabItem value="b">
+
+```css
+/* all spacing, font size must be a multiple of 5 */
+.mb10{ margin-bottom:10px; }
+.mb15{ margin-bottom:15px; }
+.mb20{ margin-bottom:20px; }
+.fs15{ font-size:15px;}
+.fs20{ font-size:20px;}
+.fs25{ font-size:25px;}
+.lh20{ line-height:20px;}
+.lh25{ line-height:25px;}
+.lh30{ line-height:30px;}
+/* ... */
+```
+
+</TabItem>
+</Tabs>
+
+When we create SCSS code for these **design specifications**, we can use the Mixin `SACSS` to quickly create the relevant code.
+
+<Tabs
+  defaultValue="lessA"
+  values={[
+    { label: 'Project A LESS', value: 'lessA', },
+    { label: 'Project A SASS ', value: 'sassA', },
+    { label: 'Project B LESS', value: 'lessB', },
+    { label: 'Project B SASS', value: 'sassB', }
+  ]
+  }
+>
+<TabItem value="lessA">
+
+```less
+/* all spacing, font size must be a multiple of 4. */
+@import 'sacss/less/SACSS.less';
+
+#SACSS(margin-bottom; mb; 8, 16, 24; 1px);
+#SACSS(font-size; fs; 12, 16, 20; 1px);
+#SACSS(line-height; lh; 16, 24, 28; 1px);
+/* ... */
+```
+
+</TabItem>
+<TabItem value="sassA">
+
+```css
+/* all spacing, font size must be a multiple of 4. */
+@import 'sacss/sass/SACSS.scss';
+
+@include SACSS(margin-bottom, mt, (8, 16, 24), 1px);
+@include SACSS(font-size, fs, (12, 16, 20), 1px);
+@include SACSS(line-height, lh, (12, 16, 20), 1px);
+/* ... */
+```
+
+</TabItem>
+
+<TabItem value="lessB">
+
+```less
+/* all spacing, font size must be a multiple of 5 */
+@import 'sacss/less/SACSS.less';
+
+#SACSS(margin-bottom; mb; 10, 15, 20; 1px);
+#SACSS(font-size; fs; 15, 20, 25; 1px);
+#SACSS(line-height; lh; 20, 25, 30; 1px);
+/* ... */
+```
+
+</TabItem>
+<TabItem value="sassB">
+
+```css
+/* all spacing, font size must be a multiple of 5 */
+@import 'sacss/sass/SACSS.scss';
+
+@include SACSS(margin-bottom, mt, (10, 15, 20), 1px);
+@include SACSS(font-size, fs, (15, 20, 25), 1px);
+@include SACSS(line-height, lh, (20, 25, 30), 1px);
+/* ... */
+```
+
+</TabItem>
+</Tabs>
+
+Mixin here generates the same code as the corresponding CSS above.
+
+## SACSS API
+
+<Tabs
+  defaultValue="lessApi"
+  values={[
+    { label: 'LESS', value: 'lessApi', },
+    { label: 'SASS', value: 'sassApi', }
+  ]
+  }
+>
+<TabItem value="lessApi">
+
+```css
+@import 'sacss/less/SACSS.less';
+
+#SACSS('attribute name'; 'abbreviation name'; 'list of values'; 'units');
+
+// attribute name: write attribute name directly `font-size` (without quotes)
+// abbreviated name: abbreviated name `fs` (without quotes)
+// list of values: corresponding list of values `8, 16, 24` (comma separated)
+// Units: default `1px`, if needed based on rem please write the expression `1/16*1rem`
+```
+
+</TabItem>
+<TabItem value="sassApi">
+
+```css
+@import 'sacss/sass/SACSS.scss';
+
+@include SACSS('attribute name', 'abbreviation name', ('list of values'), 'units');
+
+// attribute name: write attribute name directly `font-size` (without quotes)
+// abbreviated name: abbreviated name `fs` (without quotes)
+// list of values: corresponding list of values `8, 16, 24` (semicolon separated)
+// Units: default `1px`, if needed based on rem please write the expression `1/16*1rem`
+```
+</TabItem>
+</Tabs>
+
+For how to abbreviate the naming, please [click here](./core#naming-rules).
+
+> SACSS only works for numeric values. For example, `font-weight:bold;` cannot be created using SACSS, but `font-weight:400;` ok.
+
+
+## What needs to be customized?
+
+- `margin`: `m`
+- `padding`: `p`
+- `font-size`: `fs`
+- `line-height`: `lh`
+- `color`: `c_`
+- `background-color`: `bc_`
+
+
+

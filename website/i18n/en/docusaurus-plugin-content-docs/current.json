@@ -2,5 +2,13 @@
   "version.label": {
     "message": "Next",
     "description": "The label for version current"
+  },
+  "sidebar.sideBar.category.Introduction": {
+    "message": "Introduction",
+    "description": "The label for category Introduction in sidebar sideBar"
+  },
+  "sidebar.sideBar.category.Use": {
+    "message": "Use",
+    "description": "The label for category Use in sidebar sideBar"
   }
 }
