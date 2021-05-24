@@ -1,6 +1,6 @@
 {
   "name": "sacss",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Static Atomic CSS, Rapidly build modern websites without ever leaving your HTML.",
   "author": "ziven27",
   "license": "MIT",
@@ -14,11 +14,9 @@
     "prepublishOnly": "npm run build"
   },
   "files": [
-    "demo",
     "index.css",
-    "less/SACSS.less",
-    "sass/SACSS.scss",
-    "mixin",
+    "less/",
+    "sass/",
     "lang"
   ],
   "keywords": [
