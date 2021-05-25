@@ -1,4 +1,3 @@
-
 # 核心代码
 
 [![npm package][npm-badge]][npm-url]
@@ -102,48 +101,3 @@ import TabItem from '@theme/TabItem';
 
 如果你没有构建工具，也可以直接使用 jsdelivr CDN，或者直接下载这个 CDN 文件本地使用。
 
-## 命名规则
-
-1. 只取首字母: `.db{ display:block; }`;
-2. 有数字直接连接: `.mb10{ margin-bottom:10px; }`;
-3. 负值直接 `-` 连接: `.mb-10{ margin-bottom:-10px; }`;
-4. 特殊符号直接用 `\` 转义:  `.w100\%{ width:100%; } .lh1\.2{ line-height:1.2 }`;
-5. 其它或自定义样式，用 `_`分割 `.c_fff{ color:#fff; } .bc_fff{ background-color: #ffffff; }`
-6. hover 样式，用 `\:h`分割 `.fs12{ font-size:12px; } .fs12\:h:hover{ font-size:12px; }`
-
-这套**命名规则**已经使用快接近 10 年了，是整个项目的**核心**。
-
-一套会让人**加速**，甚至是产生**愉悦**的**命名规则**。
-
-## 颜色命名
-
-```css
-/* '.c_{custome name}{ color: value; }}' */
-
-.c_xl { color: #111; }
-.c_l { color: #333; }
-.c_m { color: #666; }
-.c_s { color: #999; }
-.c_xs { color: #ddd; }
-.c_primary { color: blue; }
-.c_secondary { color: gray; }
-.c_danger { color: red; }
-.c_warning { color: yellow; }
-.c_success { color: green; }
-.c_info { color: cadetblue; }
-.c_light { color: #f8f9fa; }
-.c_dark { color: #343a40; }
-```
-
-## 命名对比
-
-| Declarations         | SACSS     | ACSS       | Tailwind CSS      | Blowdrycss           | Basscss          | Tachyons   |
-| -------------------- | -------- | ----------- | ----------------- | -------------------- | ---------------- | ---------- |
-| `margin: 12px;`      | `.m12`   | `.M(12px)`  | `.m-4`            | `.margin-12`         | `.m2`            | `.ma3`     |
-| `text-align: center` | `.tac`   | `.Ta(c)`    | `.text-center`    | `.text-align-center` | `.center`        | `.tc`      |
-| `margin: -12px`      | `.m-12`  | `.M(-12px)` | `.-m-4`           | `.margin-n12`        | `.mxn2`          | `.na3`     |
-| `font-size: 25px`    | `.fs25`  | `.Fz(25px)` | `.text-2xl`       | `.font-size-25`      | `.h2`            | `.f3`      |
-| `width: 50%`         | `.w50%`  | `.W(50%)`   | `.w-1/2`          | `.width-50p`         | `.col-6`         | `.w-50`    |
-| `line-height: 1.5`   | `.lh1.5` | `.Lh(1.5)`  | `.leading-normal` | `.line-height-1_5`   | `.line-height-4` | `.lh-copy` |
-
-可以很明显地看到, SACSS 的命名规则，更加**简单**和**自然**。
