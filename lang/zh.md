@@ -16,7 +16,7 @@ SACSS 目标在于帮助你更**快**更**简单**的创建属于自己项目的
 [jsdelivr-badge]: https://data.jsdelivr.com/v1/package/npm/sacss/badge
 [jsdelivr-url]: https://www.jsdelivr.com/package/npm/sacss
 
-[英文](../README.md) | 简体中文
+[English](../README.md) | 简体中文
 
 ## Why Utility First CSS?
 

@@ -16,7 +16,7 @@ SACSS is attempt to help you create **Utility First CSS** class library for your
 [jsdelivr-badge]: https://data.jsdelivr.com/v1/package/npm/sacss/badge
 [jsdelivr-url]: https://www.jsdelivr.com/package/npm/sacss
 
-英文 | [简体中文](./lang/zh.md)
+English | [简体中文](./lang/zh.md)
 
 ## Why Utility First CSS?
 
