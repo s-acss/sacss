@@ -1,10 +1,46 @@
-# React / VUE / ...
+# React Native
 
-|React|VUE|Svelte| ... |
-|----|----|----|----|
 
-SACSS 核心是 CSS 文件加上一套**命名规则**。
 
-理论上支持所有支持 CSS 的项目。
+React Native 中因为无法使用 CSS 本身。
 
-只是需要额外注意的是，SACSS 需要全局引入。
+基于 SACSS 核心的命名规则，我们有另外一个 NPM 包供大家使用。
+
+[![npm package][npm-badge]][npm-url]
+
+[npm-badge]: https://img.shields.io/npm/v/@_nu/react-native-acss.svg
+[npm-url]: https://www.npmjs.org/package/@_nu/react-native-acss
+
+
+```bash
+$ npm i @_nu/react-native-acss
+```
+
+## 使用
+
+```jsx
+import React from 'react';
+import {Text, View, ImageBackground, Image} from './packages/withAcss';
+import mImg1 from "./assets/1.jpg";
+import mImg2 from "./assets/2.jpg";
+
+export default function App() {
+    return (
+        <View bc="#f5f5f5" pt={100} ph={30} h="100%">
+            <View mb={16} aic>
+                <Image br={32} w={64} h={64} source={mImg1}/>
+            </View>
+            <Text c="#ffffff" p={16} bc="#4c5fe2" tac mb={16}>Hello world!</Text>
+            <ImageBackground source={mImg2} mb={40}>
+                <View bc="rgba(255,255,255,.8)">
+                    <Text fs={40} lh={100} tac fwb c="#4c5fe2">Hello Again!</Text>
+                </View>
+            </ImageBackground>
+        </View>
+    );
+};
+```
+
+![demo](https://github.com/nu-system/react-native-acss/raw/master/demo.png)
+
+[@_nu/react-native-acss](https://github.com/nu-system/react-native-acss) 和 SACSS 命名规则基本一致，只是换成了更加灵活的 `key={value}` 形式，点我[查看更多](https://github.com/nu-system/react-native-acss)。

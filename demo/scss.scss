@@ -1,41 +1,52 @@
-@import '../sass/SACSS';
-@import "../sass/helpers";
 @import '../sass/WidthPrefix';
+@import '../sass/SACSS';
+@import "../sass/Helpers";
 
-$prefix: '_';
+$prefix: '_'; // 所有的 ClassName 都会添加这个前缀(但不推荐添加前缀)
+$unit: 1/16*1rem; // 单位换算表达式
 
+// 为核心文件添加前缀
 @include WidthPrefix($prefix);
 
 // margin
-@include SACSS(margin-top, mt, (8, 16), 1px); // .mt8, .mt16
-@include SACSS(margin-right, mt, (8, 16), 1px); // .mr8, .mr16
-@include SACSS(margin-bottom, mt, (8, 16), 1px); // .mb8, .mb16
-@include SACSS(margin-left, mt, (8, 16), 1px); // .ml8, .ml16
+@include SACSS('margin-top', '#{$prefix}mt', (8, 16), $unit);
+@include SACSS('margin-right', '#{$prefix}mr', (8, 16), $unit);
+@include SACSS('margin-bottom', '#{$prefix}mb', (8, 16), $unit);
+@include SACSS('margin-left', '#{$prefix}ml', (8, 16), $unit);
 
 // padding
-@include SACSS(padding-top, pt, (8, 16), 1px); // .pt8, .pt16
-@include SACSS(padding-right, pt, (8, 16), 1px); // .pr8, .pr16
-@include SACSS(padding-bottom, pt, (8, 16), 1px); // .pb8, .pb16
-@include SACSS(padding-left, pt, (8, 16), 1px); // .pl8, .pl16
+@include SACSS('padding-top', '#{$prefix}mt', (8, 16), $unit);
+@include SACSS('padding-right', '#{$prefix}mr', (8, 16), $unit);
+@include SACSS('padding-bottom', '#{$prefix}mb', (8, 16), $unit);
+@include SACSS('padding-left', '#{$prefix}ml', (8, 16), $unit);
 
-@include SACSS(font-size, fs, (12, 16), 1px); // .fs12, .fs16
-@include SACSS(line-height, lh, (16, 24), 1px); // .lh16, .lh24
+// font
+@include SACSS('font-size', '#{$prefix}fs', (12, 16), $unit);
+@include SACSS('line-height', '#{$prefix}lh', (16, 24), $unit);
 
-// helers
+// size
+@include SACSS('width', '#{$prefix}w', (16, 24), $unit);
+@include SACSS('height', '#{$prefix}h', (16, 24), $unit);
+
+// Helpers
 .clearfix {
   @include Clearfix;
 }
 
-.ell {
+.ellipsis {
   @include Ellipsis;
-}
-
-.ells {
-  @include Ellipsis-multiple;
 }
 
 .cell {
   @include Cell;
+}
+
+.ellipsis-mul {
+  @include Ellipsis-multiple;
+}
+
+.ellipsis-mul._2 {
+  -webkit-line-clamp: 2;
 }
 
 // Color

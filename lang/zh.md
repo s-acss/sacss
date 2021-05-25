@@ -1,16 +1,12 @@
-# Static Atomic CSS.
+# SACSS
 
-简体中文 ｜ [English](../README.md)
+> SACSS: Static Atomic CSS
 
-Rapidly build modern websites without ever leaving your HTML.
+SACSS 目标在于帮助你更**快**更**简单**的创建属于自己项目的 **Utility First CSS** 类库。
 
-静态的 Atomic CSS，是一套具有严格命名规则的 CSS 解决方案，目标是希望让你只需要在 HTML 中就可以快速实现设计原型，而不需要在 HTML 和 CSS 之间来回切换。
-
-这和 [tailwindcss](https://tailwindcss.com/) 要解决的问题是一样的，但不同的是以 [Atomic css](https://acss.io/) 的方式。
-
-[![npm package][npm-badge]][npm-url] 
+[![npm package][npm-badge]][npm-url]
 [![jsdelivr][jsdelivr-badge]][jsdelivr-url]
-[![github][git-badge]][git-url] 
+[![github][git-badge]][git-url]
 
 [npm-badge]: https://img.shields.io/npm/v/sacss.svg
 [npm-url]: https://www.npmjs.org/package/sacss
@@ -20,209 +16,118 @@ Rapidly build modern websites without ever leaving your HTML.
 [jsdelivr-badge]: https://data.jsdelivr.com/v1/package/npm/sacss/badge
 [jsdelivr-url]: https://www.jsdelivr.com/package/npm/sacss
 
+## Why Utility First CSS?
+
+> **命名** 是 CSS 中最难的问题没有之一
+
+基于内容的**语义化**命名能够让你创建艺术品。
+
+然而在一个多人协作的项目，自认为**语义化**的命名往往会成为被人的噩梦。
+
+**BEM** 虽能规范团队中大家的命名方式，然而每个人还是需要基于自己的理解去命名。
+
+在流行的 CSS 解决方案中，**Utility First CSS** 能够比较有效地解决这个问题。
+
+因为它已经预制好需要构建的 UI 的一系列 CSS 类名，既然没有命名那么自然也就解决了命名这个核心痛点。
 
 
-## 对比其它方案
+### Utility First CSS
 
- [tailwindcss](https://tailwindcss.com/) 提供了一套有类似 `flex`, `pt-4`, `text-center` 这样命名的 CSS 的类库。
- 
- [Atomic css](https://acss.io/) 提供了一套严格 class 的命名规则。基于 [Atomizer](https://github.com/acss-io/atomizer) 这个构建工具，你在 HTML 中每写一个符合这套命名规则的 class，CSS 文件中会自动添加对应的 CSS 样式。
-
- [SACSS](https://ziven27.github.io/sacss) 提供了一套 class 的命名规则，和一些能覆盖大部分样式的 CSS 类库（同样基于这套命名规则）。同时还提供了一些常用复杂样式的 SASS 和 LESS 的 mixin，你可以使用自己的命名规则去使用这些 mixin。
-
-## 最佳实践
-
-SACSS 并不能覆盖所有的场景，最佳实践是对接设计物料和 CSS 样式布局.
-
-[Figma token to code](https://www.figma.com/community/plugin/759651077059504375/Token--%3E-Code) 这个插件能自动帮你从 Figma 设计稿中，获取 SACSS 代码。
-
-
-## 安装
-
-```bash
-$ npm i sacss;
-```
-
-## 目录结构
-
-```bash
-.
-├── mixin.less   // less Mixin
-├── mixin.scss   // sass Mixin
-└── index.css    // core css package
-```
-
-## 使用
-
-![img](../website/static/img/thumb.png)
-
-```less
-// less
-@import 'sacss';
-@import 'sacss/mixin.less';
-
-#Margins(8, 16; 1px);                // .mt8, .mr8, .mb8, .ml8, .mt16, .mr16, .mb16, .ml16;
-#Paddings(16, 24; 1px);              // .pt16, .pr16, .pb16, .pl16, .pt24, .pr24, .pb24, .pl24;
-#SACSS(font-size; fs; 16, 18; 1px);   // .fs16, .fs18;
-#SACSS(line-height; lh; 24, 28; 1px); // .lh24, .lh28;
-#SACSS(font-weight; fw; 500, 700);    // .fw500, fw700;
-```
-
-```HTML
+```html
 <style>
-    .c_m{ color: #000; }
-    .c_s{ color: #71717a; }
-    .c_info{ color:#0891b2; }
+/* 以下 CSS 代码初始阶段已经创建，开发阶段只需要使用 */
+.fs16{ font-size: 16px; }
+.lh24{ line-height: 24px; }
+.fw400{ font-weight: 400; }
+.fw900{ font-weight: 900; }
 </style>
 
-<figure class="bc_fff tac pt24 pb24 pl24 pr24">
-    <img class="w128 h128 br100% db mla mra mb24" src="./avatar.jpg" alt="avatar" width="128" height="128" />
-    <blockquote class="mb16 fs18 fw700 lh28 c_m">
-      <p class="mb8">“Tailwind CSS is the only framework that I've seen scale on large teams.</p>
-      <p>It’s easy to customize, adapts to any design, and the build size is tiny.”</p>
-    </blockquote>
-    <figcaption class="fs16 lh24">
-      <em class="db c_info fsn fw500">Sarah Dayan</em>
-      <strong class="db c_s fw500">Staff Engineer, Algolia</strong>
-    </figcaption>
-</figure>
+<h1 class="fs16 lh24 fw900">Hello world</h1>
+<p class="fs16 lh24 fw400">Utility First CSS</p>
 ```
 
+### Semantic CSS
 
-![img](../website/static/img/tailwindcss.jpg)
-
-这个示例图片是仿照 [tailwindcss](https://tailwindcss.com/) 官网做的，可以很明显的看到，实现相同的效果我们用了更少的代码。
-
-
-## SACSS 命名规则
-
-| Declarations         | SACSS     | ACSS       | Tailwind CSS      | Blowdrycss           | Basscss          | Tachyons   |
-| -------------------- | -------- | ----------- | ----------------- | -------------------- | ---------------- | ---------- |
-| `margin: 12px;`      | `.m12`   | `.M(12px)`  | `.m-4`            | `.margin-12`         | `.m2`            | `.ma3`     |
-| `text-align: center` | `.tac`   | `.Ta(c)`    | `.text-center`    | `.text-align-center` | `.center`        | `.tc`      |
-| `margin: -12px`      | `.m-12`  | `.M(-12px)` | `.-m-4`           | `.margin-n12`        | `.mxn2`          | `.na3`     |
-| `font-size: 25px`    | `.fs25`  | `.Fz(25px)` | `.text-2xl`       | `.font-size-25`      | `.h2`            | `.f3`      |
-| `width: 50%`         | `.w50%`  | `.W(50%)`   | `.w-1/2`          | `.width-50p`         | `.col-6`         | `.w-50`    |
-| `line-height: 1.5`   | `.lh1.5` | `.Lh(1.5)`  | `.leading-normal` | `.line-height-1_5`   | `.line-height-4` | `.lh-copy` |
-
-
-1. 只取首字母: `.db{ display:block; }`;
-2. 有数字直接连接: `.mb10{ margin-bottom:10px; }`;
-3. 符号直接用 `\` 转义:  `.w100\%{ width:100%; } .lh1\.2{ line-height:1.2 }`;
-4. 其它，或自定义样式，用 `_`分割 `.c_fff{ color:#fff; }`
-5. hover 样式，用 `\:h`分割 `.fs12{ font-size:12px; } .fs12\:h:hover{ font-size:12px; }`
-
-## Mixin
-
-SASS 和 LESS 拥有完全相同的 mixin.
-
-1. `Clearfix`: 清除 float 的浮动;
-2. `Ellipsis`: 单行文本超出显示`...`；
-3. `Ellipsis-multiple`: 多行文本超出显示 `...`;
-4. `Cell`: 在浮动布局中撑满剩余空间;
-5. `Margins`: 同时创建四个方向的外间距 `margin-top` `margin-right` `margin-bottom` `margin-left`;
-6: `Paddings`: 同时创建四个方向的内间距 `padding-top` `padding-right` `padding-bottom` `padding-left`;
-7: `SACSS`: 辅助你快速创建 SACSS;
-8: `_SACSS`: 执行这个方法会输出全部的 `index.css` 文件中的代码，目的是方便你为所有样式添加统一前缀（默认不加）;
-
-![img](../website/static/img/demo.png)
-
-
-``` less
-@import 'sacss/mixin.less';
-
-// custom units
-// #SACSS(font-size; fs; 12, 16; 1/16 * 1rem); // .fs12{ fontsize: 12 * 1 /16 *1rem; } .fs16{ fontsize: 16 * 1 /16 *1rem; }
-#SACSS(font-size; fs; 12, 16; 1px);        // .fs12, .fs16;
-
-#SACSS(line-height; lh; 16, 20, 24; 1px);  // .lh16, .lh20;
-
-#Margins(8, 16, 24; 1px);                  // .mt8, .mr8, .mb8, .ml8, .mt16, .mr16, .mb16, .ml16;
-#Paddings(8, 16, 24; 1px);                 // .pt8, .pr8, .pb8, .pl8, .pt16, .pr16, .pb16, .pl16;
-
-.clearfix{ #Clearfix;  }
-.ellipsis{ #Ellipsis;  }
-.cell{ #Cell; }
-.ellipsis-mul{ #Ellipsis-multiple;  }
-.ellipsis-mul._2row{ -webkit-line-clamp: 2; }
+```html
+<style>
+.h1{
+  font-size:16px;
+  line-height:24px;
+  font-weight:900;
+}
+.paragraph{
+  font-size:16px;
+  line-height:24px;
+  font-weight:400;
+}
+</style>
+<h1 class="h1">Hello world</h1>
+<p class="paragraph">Semantic CSS</p>
 ```
 
-``` html
-<div class="fs12 lh16 ellipsis">
-    Life was like a box of chocolates. You never know what you're going to get.
-</div>
-<div class="fs12 lh16 ellipsis-mul _2row">
-    Life was like a box of chocolates. You never know what you're going to get.
-</div>
-<div class="clearfix">
-    <div class="fl mr16">float-left</div>
-    <div class="cell">Life was like a box of chocolates. You never know what you're going to get.</div>
-<div>
+理想状态下（实现方案相同），我们不需要**创建**任何 CSS Class。只需要通过**组合**（拼凑多个 Class ）的形式既可以完成 UI。
+
+当然 **Utility First CSS** 在解决命名这一核心痛点的同时。
+
+还能够明显的提升 CSS 编写**效率**，以及最大限度的控制 CSS 代码**膨胀率**。
+
+> 功能越单一的 Class 复用率越高
+
+## Why Not Tailwind CSS?
+
+> Tailwind CSS 非常优秀，但不一定适合。
+
+基于 **Utility First CSS** 的 CSS 方案有很多，最有名的是 [Tailwind CSS](https://tailwindcss.com/) 它也是目前所有 CSS 解决方案中 ![github](https://img.shields.io/github/stars/tailwindlabs/tailwindcss.svg?style=social) 数最高的类库。
+
+Tailwind CSS 类库提供了**丰富**且**全面**的 CSS 类名，方便我们专注在 HTML 中就可以快速的实现 UI。
+
+可正因为**大而全**，以至于**上手**和**记忆**成本都相对较高，总有一种**杀鸡用牛刀**的感觉。
+
+而 SACSS 则是侧重在告诉你创建 **Utility First CSS** 的方法（[命名规则](./guides.name)）。
+
+比如想要实现文本**水平居中对齐** `text-align:center;` 这个效果。
+
+在使用 Tailwind CSS 时我们需要在整个上百的 Class Name 类库中，搜寻与 **水平居中对齐** 对应的 Class Name 是什么（`.text-center`）。
+
+而在使用 SACSS 时，你的思考路径是：你先知道 **水平居中对齐** 的代码是 `text-align:center;` 然后基于只取**首字母**的命名规则公式，你就能得到了 `.tac`。
+
+也就是说你看到 Style 属性，你就知道与之对应的 Class Name 是什么，完全不用记忆，并且这个模式会大大的增加**开发体验**。
+
+```html
+<!-- Tailwind CSS -->
+<style>
+.text-center{ text-align: center; }
+</style>
+<h1 class="text-center">hello world</h1>
+
+<!-- SACSS -->
+<style>
+.tac{ text-align: center; }
+</style>
+<h1 class="tac">hello world</h1>
 ```
 
-### 统一添加前缀
+我们还为这套命名规则创建了 [Figma 插件](./intro.design)，使用这个插件你甚至你只需要从设计工具中**拷贝**和**粘贴**项目代码。
 
-如果你觉得默认的 CSS 样式会造成全局污染，可以通过 `_SACSS` 这个方法去为每一条样式添加统一前缀
+> 授人以鱼不如授人以渔
 
-> 为了更好的开发体验, 我门还是推荐使用不带前缀的 `index.css` 文件.
+## 命名对比
 
-```less
-@import 'sacss/mixin.less';
+| Declarations         | SACSS     | ACSS       | Tailwind CSS      | Basscss          | Tachyons   |
+| -------------------- | -------- | ----------- | ----------------- | ---------------- | ---------- |
+| `margin: 12px;`      | `.m12`   | `.M(12px)`  | `.m-4`            | `.m2`            | `.ma3`     |
+| `text-align: center` | `.tac`   | `.Ta(c)`    | `.text-center`    | `.center`        | `.tc`      |
+| `margin: -12px`      | `.m-12`  | `.M(-12px)` | `.-m-4`           | `.mxn2`          | `.na3`     |
+| `font-size: 25px`    | `.fs25`  | `.Fz(25px)` | `.text-2xl`       | `.h2`            | `.f3`      |
+| `width: 50%`         | `.w50%`  | `.W(50%)`   | `.w-1/2`          | `.col-6`         | `.w-50`    |
+| `line-height: 1.5`   | `.lh1.5` | `.Lh(1.5)`  | `.leading-normal` | `.line-height-4` | `.lh-copy` |
+| - | - | [了解更多](https://acss.io/) | [了解更多](https://tailwindcss.com/) |[了解更多](https://basscss.com/) |[了解更多](http://tachyons.io/) |
 
-@prefix:'acss_';
-#_SACSS(@prefix); // 所有的默认的样式都会添加统一的前缀（其它Mixin需要手动添加前缀）
+可以很明显的看到，同其它类型项目相比，SACSS 的命名更加的**规范**和**简单**。
 
-// .acss_fs12, .acss_fs16;
-#SACSS(font-size; escape('@{prefix}fs'); 12, 16; 1px); // 其它Mixin需要手动添加前缀 
+## 灵感
 
-// ...其它代码
-```
-
-```sass
-@import 'sacss/mixin.scss';
-
-$prefix:'acss_';
-@inclued _SACSS($prefix); // 所有的默认的样式都会添加统一的前缀
-
-// .acss_fs12, .acss_fs16
-@inclued SACSS(font-size; #{$prefix}fs; 12, 16; 1px); // 其它Mixin需要手动添加前缀
-
-// ...其它代码
-```
-
-
-
-## 推荐的命名规则
-
-只有 `bc_fff`, `bc_000`, `c_000`,`c_fff` 这四个颜色相关样式内置在 `sacss/index.css` 文件中。
-
-其它的样式只是推荐约定，并未内置在 `sacss/index.css` 文件中。
-
-```css
-.bc_fff { background-color: #fff;}
-.bc_000 { background-color: #000; }
-.c_000 { color: #000; }
-.c_fff { color: #fff; }
-```
-
-### 颜色
-
-```css
-/*!
- *  rules  '.c_{custome name}{ color: value; }}'
- */
-.c_xl { color: #111; }
-.c_l { color: #333; }
-.c_m { color: #666; }
-.c_s { color: #999; }
-.c_xs { color: #ddd; }
-.c_primary { color: blue; }
-.c_secondary { color: gray; }
-.c_danger { color: red; }
-.c_warning { color: yellow; }
-.c_success { color: green; }
-.c_info { color: cadetblue; }
-.c_light { color: #f8f9fa; }
-.c_dark { color: #343a40; }
-```
-
+- [Tailwind CSS](https://tailwindcss.com/)：最流行的 **Utility First CSS** 类库；
+- [Atomic CSS](https://acss.io/): 核心理念（雅虎）；
+- [Fower](https://fower.vercel.app/)： An utility-first CSS in JS library for rapid UI development (文档灵感);
+- [Emmet](https://www.emmet.io/): 命名规则灵感来自 Emmet，很多 IDE 内置这个规则;

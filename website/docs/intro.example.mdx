@@ -1,7 +1,26 @@
-# 设计工具
+# 例子
 
-[![img](/img/design.png)](https://www.figma.com/community/plugin/759651077059504375/Token--%3E-Code)
+import Demo from "@site/src/components/Demo";
 
-[Figma token to code](https://www.figma.com/community/plugin/759651077059504375/Token--%3E-Code) 这个插件能自动帮你从 Figma 设计稿中，直接获取 SACSS 代码。
+<Demo/>
 
-是不是非常的贴心❤️？
+## 复杂例子
+
+import AvatarTitleDesc from "@site/src/demo/AvatarTitleDesc";
+
+<AvatarTitleDesc/>
+
+```html live
+<div className="bc_fff tac pt24 pb24 pl24 pr24 br8">
+  <img className="w128 h128 br100% db mla mra mb24" src="/img/avatar.jpg"
+       alt="avatar" width="128" height="128"/>
+  <div className="mb16 fs18 fw700 lh28 c_m">
+    <p className="mb8">Tailwind CSS is the only framework that I've seen scale on large teams.</p>
+    <p>It’s easy to customize, adapts to any design, and the build size is tiny.</p>
+  </div>
+  <div className="fs16 lh24">
+    <em className="db c_info fsn fw500">Sarah Dayan</em>
+    <strong className="db c_s fw500">Staff Engineer, Algolia</strong>
+  </div>
+</div>
+```

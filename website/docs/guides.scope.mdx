@@ -11,7 +11,8 @@ import TabItem from '@theme/TabItem';
   defaultValue="less"
   values={[
     { label: 'LESS', value: 'less', },
-    { label: 'SASS', value: 'sass', }
+    { label: 'SASS', value: 'sass', },
+    { label: 'Output CSS', value: 'out', }
   ]
 }
 >
@@ -23,12 +24,6 @@ import TabItem from '@theme/TabItem';
 @prefix: '_';  // 这个替换成你想添加的前缀
 
 #WidthPrefix(@prefix);
-
-/** 构建会输出以下代码 */
-// ._db{display:block}
-// ._df{display:flex}
-// ._fw400{font-weight:400}
-// ...
 ```
 
 </TabItem>
@@ -40,20 +35,23 @@ import TabItem from '@theme/TabItem';
 $prefix: '_'; // 这个替换成你想添加的前缀
 
 @include WidthPrefix($prefix);
+```
+</TabItem>
+<TabItem value="out">
 
-/** 构建会输出以下代码 */
-// ._db{display:block}
-// ._df{display:flex}
-// ._fw400{font-weight:400}
-// ...
+```css
+/* 会为 sacss/index.css 每一条CSS 添加 '_' 前缀 */
+._db{display:block}
+._df{display:flex}
+._fw400{font-weight:400}
+/* 这里忽略了剩余的其余代码... */
 ```
 </TabItem>
 </Tabs>
 
+这样我们所有的核心 class 前都会带上 `_` 前缀。
+
 > CSS 不具有 Mixin 功能，请下载 CSS 文件手动添加。
-
-这样我们所有的核心 Class 前都会带上 `_` 前缀。
-
 
 ## 不推荐
 

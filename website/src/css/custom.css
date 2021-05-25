@@ -96,7 +96,9 @@ dl, dt, dd, h2, p {
 .fs16 {
   font-size: 16px;
 }
-
+.fs40{
+  font-size: 40px;
+}
 .w48 {
   width: 48px;
 }
@@ -123,8 +125,4 @@ dl, dt, dd, h2, p {
 
 .mw480{
   max-width: 480px;
-}
-
-.bc_info{
-  background-color: #57b8e4;
 }

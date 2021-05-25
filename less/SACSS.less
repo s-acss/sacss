@@ -7,10 +7,12 @@
  * @unit: 单位换算表达式, 默认为1px, 想要 rem 填写 1/16*1rem
  */
 #SACSS(@prop; @name; @list; @unit) when not(@list = false) {
+  @escapeProp: escape(@prop);
+  @escapeName: escape(@name);
   .loop(@i) when (@i < length(@list) + 1) {
     @item: extract(@list, @i);
-    .@{name}@{item} {
-      @{prop}: @item * @unit;
+    .@{escapeName}@{item} {
+      @{escapeProp}: @item * @unit;
     }
     .loop(@i+1);
   }
@@ -25,10 +27,12 @@
  * @list: 值列表
  */
 #SACSS(@prop; @name; @list;) when not(@list =false) {
+  @escapeProp: escape(@prop);
+  @escapeName: escape(@name);
   .loop(@i) when (@i < length(@list) + 1) {
     @item: extract(@list, @i);
-    .@{name}@{item} {
-      @{prop}: @item;
+    .@{escapeName}@{item} {
+      @{escapeProp}: @item;
     }
     .loop(@i+1);
   }

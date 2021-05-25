@@ -28,9 +28,12 @@ export default function Home() {
           </div>
         </div>
         <div className="tac mt16 mb16">
-          <Button Component={DLink} to="/docs/about">
-            <Translate id="start.button" description="了解更多">
-              了解更多
+          <div className="tac mb16 fs40 fw700">
+            React &nbsp; | &nbsp;  VUE &nbsp; | &nbsp;  Svelte  &nbsp; | &nbsp;  React Native &nbsp; | &nbsp;  CSS &nbsp; | &nbsp;  Figma &nbsp; | &nbsp; ...
+          </div>
+          <Button Component={DLink} to="/docs/intro.about">
+            <Translate id="start.button" description="开始">
+              开始
             </Translate>
           </Button>
         </div>

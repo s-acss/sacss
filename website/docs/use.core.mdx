@@ -1,4 +1,4 @@
-# 核心代码
+# 核心 CSS
 
 [![npm package][npm-badge]][npm-url]
 [![jsdelivr][jsdelivr-badge]][jsdelivr-url]
@@ -12,74 +12,21 @@
 [jsdelivr-badge]: https://data.jsdelivr.com/v1/package/npm/sacss/badge
 [jsdelivr-url]: https://www.jsdelivr.com/package/npm/sacss
 
+SACSS 的核心是[命名规则](./guides.name)，**核心代码**是一个 CSS 文件。
+
 ## 安装
 
 ```bash
 $ npm i sacss
-
-# 推荐使用👇
-$ yarn add sacss
 ```
 
-## 目录结构
-
-```bash
-.
-├── less                   # 存放 LESS Mixin 的文件夹
-│   ├── SACSS.less         # 帮助创建 sacss 的辅助 LESS Mixin
-│   ├── WidthPrefix.less   # 为核心代码添加自定义前缀
-│   └── helpers.less       # 独立于 sacss 之外的常用辅助 Mixin
-├── sass                   # 存放 LESS Mixin 的文件夹
-│   ├── SACSS.scss         # 帮助创建 sacss 的辅助 SASS Mixin
-│   ├── WidthPrefix.scss   # 为核心代码添加自定义前缀
-│   └── helpers.scss       # 独立于 sacss 之外的常用辅助 mixin
-└── index.css              # 所有项目基本相同的核心代码（只推荐定制，命名前缀）;
-```
-
-`less` 和 `sass` 拥有完全相同的文件和 API，只是语法不一样的实现而已。
-
-## 核心文件
-
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
-<Tabs
-  defaultValue="pure"
-  values={[
-    { label: 'CSS', value: 'pure', },
-    { label: 'LESS', value: 'less', },
-    { label: 'SASS', value: 'sass', },
-  ]
-}
->
-
-<TabItem value="pure">
+## 使用
 
 ```html
 <link rel="stylesheet" href="./node_modules/sacss/index.css" />
 ```
 
-</TabItem>
-<TabItem value="less">
-
-```less
-@import 'sacss';  // sacss/index.css
-```
-
-</TabItem>
-<TabItem value="sass">
-
-```scss
-@import 'sacss';  // sacss/index.css
-```
-
-</TabItem>
-
-</Tabs>
-
-核心文件的使用非常的简单，只需要**全局**引入 `sacss/index.css` 文件即可。
-
-`sacss/index.css` 包含了，大部分构建 UI **结构** 所需要的零件，比如：
+**全局**引入 `sacss/index.css` 文件即可，这个文件包含了大部分构建 UI **结构** 所需要的零件，比如：
 
 - `display` 布局
 - `float` 布局
@@ -87,11 +34,13 @@ import TabItem from '@theme/TabItem';
 - `position` 布局
 - `font-weight` 100～900
 
-... 更多请查看源文件。
+... 更多请查看[源文件](https://cdn.jsdelivr.net/npm/sacss/index.css)。
 
-整体核心代码未压缩只有 `2kb`, 体积非常小所以请**全局**引入。
+整体核心代码未压缩只有 `2kb`，压缩版本只有`93b`，**全局**引入不会有任何的压力，SACSS 也只推荐全局引用。
 
-> ️注意：只能全局使用 SACSS，不要使用 CSS module 的方式引用
+对于构建 UI 的另一部分**样式**，可以[点击这里](./guides.custom)了解。
+
+> ⚠️ 注意： node_modules 中的文件引入需要构建工具的支持。
 
 ## CDN
 
@@ -99,5 +48,4 @@ import TabItem from '@theme/TabItem';
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sacss/index.min.css" />
 ```
 
-如果你没有构建工具，也可以直接使用 jsdelivr CDN，或者直接下载这个 CDN 文件本地使用。
-
+如果你没有类似 webpack 的构建工具，可以直接使用 jsdelivr CDN，或者直接 [下载](https://cdn.jsdelivr.net/npm/sacss/index.min.css) 这个文件本地引入使用。

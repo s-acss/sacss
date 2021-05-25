@@ -1,27 +1,46 @@
-@import '../less/SACSS.less';
-@import "../less/helpers";
-
 @import '../less/WidthPrefix';
+@import '../less/SACSS.less';
+@import "../less/Helpers";
 
-@prefix: '_';
 
+@prefix: '';
+@prefix_: '_';
+
+@unit_px: 1px;
+@unit_rem: 1/16*1rem;
+
+#SACSS('margin-top'; '@{prefix}mt'; 8, 16; @unit_px);
+#SACSS('margin-right'; '@{prefix}mr'; 8, 16; @unit_px);
+#SACSS('margin-bottom'; '@{prefix_}mb'; 8, 16;@unit_rem);
+#SACSS('margin-left'; '@{prefix_}ml'; 8, 16; @unit_rem);
+
+@prefix: ''; // 所有的 ClassName 都会添加这个前缀(但不推荐添加前缀)
+@unit: 1px; // 单位换算表达式
+
+// 为核心文件添加前缀
 #WidthPrefix(@prefix);
+
 // margin
-#SACSS(margin-top; mt; 8, 16; 1px); // .mt8, .mt16
-#SACSS(margin-right; mr; 8, 16; 1px); // .mr8, .mr16
-#SACSS(margin-bottom; mb; 8, 16; 1px); // .mb8, .mb16
-#SACSS(margin-left; ml; 8, 16; 1px); // .ml8, .ml16
+#SACSS('margin-top'; '@{prefix}mt'; 8, 16; @unit);
+#SACSS('margin-right'; '@{prefix}mr'; 8, 16; @unit);
+#SACSS('margin-bottom'; '@{prefix}mb'; 8, 16; @unit);
+#SACSS('margin-left'; '@{prefix}ml'; 8, 16; @unit);
 
 // padding
-#SACSS(padding-top; pt; 8, 16; 1px); // .pt8, .pt16
-#SACSS(padding-right; pr; 8, 16; 1px); // .pr8, .pr16
-#SACSS(padding-bottom; pb; 8, 16; 1px); // .pb8, .pb16
-#SACSS(padding-left; pl; 8, 16; 1px); // .pl8, .pl16
+#SACSS('padding-top'; '@{prefix}pt'; 8, 16; @unit);
+#SACSS('padding-right'; '@{prefix}pr'; 8, 16; @unit);
+#SACSS('padding-bottom'; '@{prefix}pb'; 8, 16; @unit);
+#SACSS('padding-left'; '@{prefix}pl'; 8, 16; @unit);
 
-#SACSS(font-size; fs; 12, 16; 1px); // .fs12, .fs16;
-#SACSS(line-height; lh; 16, 24; 1px); // .lh16, .lh24;
+// font
+#SACSS('font-size'; '@{prefix}fs'; 12, 16; @unit);
+#SACSS('line-height'; '@{prefix}lh'; 16, 24; @unit);
 
-// helpers
+// size
+#SACSS('width'; '@{prefix}w'; 16, 24; @unit);
+#SACSS('height'; '@{prefix}h'; 16, 24; @unit);
+
+// Helpers
 .clearfix {
   #Clearfix;
 }
@@ -38,7 +57,7 @@
   #Ellipsis-multiple;
 }
 
-.ellipsis-mul._2row {
+.ellipsis-mul._2 {
   -webkit-line-clamp: 2;
 }
 

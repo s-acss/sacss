@@ -3,7 +3,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 export default function Home() {
   return (
-    <div className="pt24 pb24 pr24 pl24 bc_info">
+    <div className="pt24 pb24 pr24 pl24 bc_000">
       <div className="bc_fff tac pt24 pb24 pl24 pr24 br8 mw480 mla mra">
         <img className="w128 h128 br100% db mla mra mb24" src={useBaseUrl('/img/avatar.jpg')}
              alt="avatar" width="128" height="128"/>
