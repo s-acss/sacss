@@ -16,9 +16,11 @@ SACSS is attempt to help you create **Utility First CSS** class library for your
 [jsdelivr-badge]: https://data.jsdelivr.com/v1/package/npm/sacss/badge
 [jsdelivr-url]: https://www.jsdelivr.com/package/npm/sacss
 
+英文 | [简体中文](./lang/zh.md)
+
 ## Why Utility First CSS?
 
-> **Naming** is one of the most difficult problems in CSS bar none
+> **Naming** is one of the most difficult problems in CSS
 
 Content-based **semantic** naming enables you to create artwork.
 
@@ -29,9 +31,6 @@ While **BEM** can standardize the way everyone on the team names things, however
 Among the popular CSS solutions, **Utility First CSS** solves this problem relatively effectively.
 
 Because it already has a series of CSS class names for the UI that needs to be built, the core pain point of naming is naturally solved since there is no naming.
-
-Translated with www.DeepL.com/Translator (free version)
-
 
 ### Utility First CSS
 
