@@ -11,8 +11,8 @@ SACSS 目标在于帮助你更**快**更**简单**的创建属于自己项目的
 [npm-badge]: https://img.shields.io/npm/v/sacss.svg
 [npm-url]: https://www.npmjs.org/package/sacss
 [npm-downloads]: https://img.shields.io/npm/dw/sacss
-[git-url]: https://github.com/ziven27/SACSS
-[git-badge]: https://img.shields.io/github/stars/ziven27/SACSS.svg?style=social
+[git-url]: https://github.com/s-acss/sacss
+[git-badge]: https://img.shields.io/github/stars/s-acss/sacss.svg?style=social
 [jsdelivr-badge]: https://data.jsdelivr.com/v1/package/npm/sacss/badge
 [jsdelivr-url]: https://www.jsdelivr.com/package/npm/sacss
 
