@@ -1,0 +1,56 @@
+@import '../stylus/WidthPrefix'
+@import '../stylus/SACSS'
+@import "../stylus/Helpers"
+
+$prefix = 'g_' // 所有的 ClassName 都会添加这个前缀(但不推荐添加前缀)
+
+$unit =  1/16*1rem // 单位换算表达式
+
+// 为核心文件添加前缀
+// WidthPrefix($prefix)
+
+// margin
+SACSS($prefix,'margin-top','mt', 8 16, $unit)
+SACSS($prefix,'margin-right','mr', 8 16, $unit)
+SACSS($prefix,'margin-bottom','mb', 8 16, $unit)
+SACSS($prefix,'margin-left','ml', 8 16, $unit)
+
+// padding
+SACSS($prefix,'padding-top','mt', 8 16, $unit)
+SACSS($prefix,'padding-right','mr', 8 16, $unit)
+SACSS($prefix,'padding-bottom','mb', 8 16, $unit)
+SACSS($prefix,'padding-left','ml', 8 16, $unit)
+
+// font
+SACSS($prefix,'font-size','fs', 12 16, $unit)
+SACSS($prefix,'line-height','lh', 16 24, $unit)
+
+// size
+SACSS($prefix,'width','w', 16 24, $unit)
+SACSS($prefix,'height','h', 16 24, $unit)
+
+// Helpers
+.clearfix
+  Clearfix()
+
+.ellipsis
+  Ellipsis()
+
+.cell
+  Cell()
+
+.ellipsis-mul
+  Ellipsis-multiple()
+
+.ellipsis-mul._2
+  -webkit-line-clamp: 2
+
+// Color
+.c_m
+  color: #000
+
+.c_s
+  color: #71717a
+
+.c_info
+  color: #0891b2

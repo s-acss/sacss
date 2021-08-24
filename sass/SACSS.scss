@@ -1,15 +1,16 @@
 @charset "utf-8";
 
 /**
- * @include ACSS(font-size; fs; 12, 16; 1px);
- * @prop: 属性名
- * @name: 缩写名
- * @list: 值列表
- * @unit: 单位换算表达式, 默认为1px, 想要 rem 填写 1/16*1rem
+ * $include ACSS('', font-size; fs; 12, 16; 1px);
+ * $prefix: 前缀
+ * $prop: 属性名
+ * $name: 缩写名
+ * $list: 值列表
+ * $unit: 单位换算表达式, 默认为1px, 想要 rem 填写 1/16*1rem
  */
-@mixin SACSS($prop: false, $name: '', $list: (), $unit: false) {
+@mixin SACSS($prefix: '', $prop: false, $name: '', $list: (), $unit: false) {
   @each $item in $list {
-    .#{$name}#{$item } {
+    .#{$prefix}#{$name}#{$item } {
       #{$prop}: if($unit, $item * $unit, $item);
     }
   }

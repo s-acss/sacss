@@ -1,0 +1,21 @@
+/* 清除浮动 */
+Clearfix(){
+  &:after{
+    display: table; content: ''; clear: both;
+  }
+}
+
+/* 文字超出一行点点点 */
+Ellipsis(){
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+
+/* 多行文本超出点点点 */
+Ellipsis-multiple(){
+  display: -webkit-box; overflow: hidden; word-wrap: break-word; -webkit-box-orient: vertical;
+}
+
+/* 用表格的方式撑满浮动之后的剩余空间 */
+Cell(){
+  display: table-cell; *display: inline-block; width: 2000px; *width: auto;
+}

@@ -9,24 +9,24 @@ $unit: 1/16*1rem; // 单位换算表达式
 @include WidthPrefix($prefix);
 
 // margin
-@include SACSS('margin-top', '#{$prefix}mt', (8, 16), $unit);
-@include SACSS('margin-right', '#{$prefix}mr', (8, 16), $unit);
-@include SACSS('margin-bottom', '#{$prefix}mb', (8, 16), $unit);
-@include SACSS('margin-left', '#{$prefix}ml', (8, 16), $unit);
+@include SACSS($prefix, 'margin-top', 'mt', (8, 16), $unit);
+@include SACSS($prefix, 'margin-right', 'mr', (8, 16), $unit);
+@include SACSS($prefix, 'margin-bottom', 'mb', (8, 16), $unit);
+@include SACSS($prefix, 'margin-left', 'ml', (8, 16), $unit);
 
 // padding
-@include SACSS('padding-top', '#{$prefix}mt', (8, 16), $unit);
-@include SACSS('padding-right', '#{$prefix}mr', (8, 16), $unit);
-@include SACSS('padding-bottom', '#{$prefix}mb', (8, 16), $unit);
-@include SACSS('padding-left', '#{$prefix}ml', (8, 16), $unit);
+@include SACSS($prefix, 'padding-top', 'mt', (8, 16), $unit);
+@include SACSS($prefix, 'padding-right', 'mr', (8, 16), $unit);
+@include SACSS($prefix, 'padding-bottom', 'mb', (8, 16), $unit);
+@include SACSS($prefix, 'padding-left', 'ml', (8, 16), $unit);
 
 // font
-@include SACSS('font-size', '#{$prefix}fs', (12, 16), $unit);
-@include SACSS('line-height', '#{$prefix}lh', (16, 24), $unit);
+@include SACSS($prefix, 'font-size', 'fs', (12, 16), $unit);
+@include SACSS($prefix, 'line-height', 'lh', (16, 24), $unit);
 
 // size
-@include SACSS('width', '#{$prefix}w', (16, 24), $unit);
-@include SACSS('height', '#{$prefix}h', (16, 24), $unit);
+@include SACSS($prefix, 'width', 'w', (16, 24), $unit);
+@include SACSS($prefix, 'height', 'h', (16, 24), $unit);
 
 // Helpers
 .clearfix {

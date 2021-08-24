@@ -1,0 +1,14 @@
+@charset "utf-8";
+
+/**
+ * SACSS(font-size, fs, 12 16, 1px)
+ * @prefix: 前缀
+ * @prop: 属性名
+ * @name: 缩写名
+ * @list: 值列表
+ * @unit: 单位换算表达式, 默认为1px, 想要 rem 填写 1/16*1rem
+ */
+SACSS($prefix, $prop, $name, $list, $unit = 1px)
+  for $item in $list
+    .{$prefix}{$name}{$item}
+      {$prop} $item * $unit
